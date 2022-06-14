@@ -1,0 +1,84 @@
+OpsWork
+	- Puppet and Chef
+Cloudformation
+	- Best practice for SysOps
+	- Use StackSet to deploy same template across different account
+	- Slow compare to normal
+	- Use secured way to follow best Practice!!
+	- Can create accounts too
+	SecurityGroupIngress:
+     - IpProtocol: tcp
+       FromPort: 80
+       ToPort: 80
+       CidrIp: 0.0.0.0/0
+     - IpProtocol: tcp
+       FromPort: 22
+       ToPort: 22
+       CidrIp: 192.168.1.1/32
+	
+	0.0.0.0/0 = anywhere. Port 22 jay only 192.xxx
+	No "dependencies" field but has dependsOn
+	
+AWS Elastic Beanstalk
+	- Deploy code and handle by AWS for deployment
+	- Still have full control over the configuration
+	- MANAGED
+
+Workspace 
+	- Desktop
+
+AppSync
+	- GRAPHQL
+	- Web and mobile
+
+Trust Advisor
+	- Cost optimization, performance, security+
+	- Display current usage and limits
+	- SAVE COST!
+Cost Explorer
+	- Create report and and show usage
+	- Choose an optimal savings plan
+	- Forecast up to 12months 
+Amazon Transribe
+	- Audio to text
+	- Use with Athena!
+	
+Resource Access Manager
+	- Share resource with other AWS accounts
+	- Avoid resource duplications
+	- VPC-VPC
+	- Cannot share API
+	- Cheaper than Transit gateway!
+
+
+Elastic Transcoder
+	- Convert media files (video + music) stored in S3 into various formats for tablets, PC, Smartphone,TV, etc er 
+
+
+Codecommit
+	SDLC
+	Github
+	
+IOT Core
+	- For IOT devices
+
+Lex
+	- AI and chatbot
+
+Make a migration plan
+	- Application Discovery Service
+
+Quicksight 
+= ML with dashboard and trend
+
+
+Server Migration Service
+	- Migrate system
+
+AWS Resource Name (ARN)
+uniquely identifies your AWS resource
+
+
+
+Redshift vs Dynamodb
+Audio  Tek?...

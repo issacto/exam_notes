@@ -1,0 +1,143 @@
+Introduction to Cloud
+	1. Introduction and Objectives
+	Definition: A model for enabling convenient, on-demand network access to a shared pool of compute resources
+• Definition and Essential Characteristics of Cloud Computing
+	- On demand SELF service
+	- Broad NETWORK
+	- RESOURCE pooling
+	- RAPID ELASTICITY
+	- Measured service
+	- Three types of models - IAS, PAAS, SAAS
+	- Multicloud = 2 more cloud providers
+ • History and Evolution of Cloud Computing
+	- 1950 =MF
+	- 1970 = OS called VM made possible for mainframe
+	- 2000 = Hypervisors (One physical run virtual systems)
+• Key Considerations for Cloud Computing
+	- Flexibility
+	- Agility
+	- Competitiveness
+	- Risk = Data security
+	
+• Key Cloud Service Providers and Their Services
+	- IaaS, PaaS, and SaaS are generally known as the service models.
+	- Pay-as-you-go is another term used for the utility billing method.
+
+	2. Cloud Adoption and Emerging Technologies
+	• Cloud Adoption – No Longer a Choice 
+		○ The power, scalability, flexibility, and pay-as-you-go economics provided the foundation for the transformation to the cloud.
+		○ 75% enterprises today are using cloud computing to expand new industries
+		○ 2025 = 163 zettabytes of data 
+	• Cloud Adoption – Some Case Studies 
+	• Internet of Things (IoT) on the Cloud 
+		○ The concept of connecting any device (so long as it has an on/off switch) to the Internet and to other connected devices.
+		- Advantages: Control in real time , reduce cost, no human intervention
+		- Disadvantages: Security, Privacy
+		-  smart assistant is an IoT device that tracks data and information and continues
+	• Artificial Intelligence on the Cloud 
+		- Look at case studies
+	• Blockchain and Analytics on the Cloud 
+		- What type of relationship exists between IoT, AI, and the cloud?
+		
+	3. Cloud Computing Service and Deployment Models
+		- Overview of Service Models
+			§ IAAS,PAAS, SAAS 
+		- Infrastructure-as-a-Service 
+			§ The user/persona for IaaS is the system administrator.
+		- Platform-as-a-Service 
+			§ + = Scalability, greate agility and innovation , middleware
+			§ -= security, dependant on provider infra
+			§ Eample = IBM Cloud pak, Redhat openshift, aws elastic beanstalk
+		- Software-as-a-Service 
+			§ Exmaple: CRM, Email
+			§ =+ directly have a solution
+			§ -= no data ownership/safety/privacy
+		- Public Cloud 
+			§ Enable tenants or users to share computing resources residing outside their firewall
+			§ += seamlessly to fluctuations in demand,  build secondary infrastructures for disaster recovery, data protection, and business continuity. Reduce time to market
+			§ -= Security
+		- Private Cloud 
+			§  may be owned, managed, and operated by the organization, a third party or some combination of them, and it may exist on or off premises. 
+			§ Virtual private cloud = infra used exclusively by the client
+			§ +=modernize and unify an organization’s in- house and legacy applications.
+		- Hybrid Cloud 
+			§ connects an organization’s on-premises private cloud and third-party public cloud into a single 
+			- SAAS integration, Enhanced legacy, Vmware migaration
+			- +=Interoperability, scalability, and portability , Resource optimization!!!
+	4. Components of Cloud Computing
+		- Overview of Cloud Infrastructure 
+			- Regions,>Zones>Data Centers
+		- Virtualization and Virtual Machines Explained 
+			- Virtual Servers (hypervisor), Bare Metal Servers (in rack that are not virtualised), Serverless
+			- Hypervisor = pull resource from physical to an virtual env
+		- Types of Virtual Machines 
+			- Hypervisors - type 1 : Installed directly on top of physical server (Vmware, MS!)
+						◊ Type 2 (Hosted) : A later of hosting OS that sits between physical and hypervisor (VirtualBox, Vmware workstation)
+			- Virtual Machine = cost savings, agile and speeedy, portable
+			- Types: Shared, Transient, Dedicated
+		- Bare Metal Servers 
+			- Dedicated to customer, provider responsible for fixing hardware and rack connections only
+			- += customizable, long term, security, full access, works best for CPU IO intenseive workloads, AI, ERP, CRM deeplearning
+			- -=custom builds can take 3-4hrs, not all cloud providers, updates are difficult, expensive
+			- Bare metal and virtual servers are provisioned with default storage in local drives.
+		- Secure Networking in Cloud 
+			- ACL
+			- A public gateway is added to the network to enable users’ access to the application in the internet tier..
+		- Containers 
+			- Portability. Scalability
+
+	5. Cloud Computing Storage, Content Delivery Network
+	• Basics of Cloud Storage 
+		- Direct Attached - aka local, cannot be shared with other node
+		- File - must be attached to one compute node in order to have access. Nework File system, resilient to failure, consistent speed cannot be hguaranteed. Network Attached
+		- Block - break files into chunks. Suitable for databasess where disk speed is important. Encryption:))
+				□ -= cannot be disk shared with other compute nodes; more expensive
+		- Object - accessed via API , least esxpensive, IOT, relatively slow, not attached to node, good for unstructured data
+	• File Storage 
+	• Block Storage 
+	• Object Storage Overview 
+	• Object Storage – Tiers and APIs 
+	• Content Delivery Networksdoes 
+		- distributed server network that delivers temporarily stored, or cached, copies of website content
+		- Better performance and user experience. 
+		-  Ease of use – increases websites speeds and file distribution. 
+		-  Cost efficiencies. •
+		- Scalable and secure. •
+		- Usage based pricing.
+
+	6. Emerging Trends
+	• Hybrid Multicloud 
+		- += cloud scaling, 
+	• Microservices 
+		- += independently dploable, scalable, updated easily
+	• Serverless Computing 
+	• Cloud-Native Applications 
+		- Microservices, automation and orchestration
+	• DevOps in the Cloud 
+		- Planning, dev, int, deploy, operat, feedback
+	• Application Modernization 
+	• += cost, complexity
+	
+	
+	
+	
+	Case Study
+	
+	American Airline - Customer service
+	Ubank - faster for innovation
+	Bitly -  cost-effective + scalable
+	ActivTrade - Vmware for secure. Boost performace
+	
+	System administrator = user of IAAS
+	
+	Private vs Public = can users share resources
+	
+	
+	
+	Public gateway
+	 
+	A public gateway is added to the network to enable users’ access to the application in the internet tier.
+	
+	
+	
+VPN = connect cloud to private network

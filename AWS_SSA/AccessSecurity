@@ -1,0 +1,99 @@
+NACL
+	 stateless 
+	- A VPC automatically comes with a default network ACL which allows all inbound/outbound traffic. A custom NACL denies all traffic both inbound and outbound by default.
+	- create custom instead of changing the default one
+	- Usually this is the problem if inbound ok but outbound not ok, vice versa
+	- Rules have a number (1-32766) and higher precedence with a lower number!
+Security Group
+Default security groups have inbound allow rules (allowing traffic from within the group) whereas custom security groups do not have inbound allow rules (all inbound traffic is denied by default). All outbound traffic is allowed by default in custom and default security groups.
+
+	Stateful (inbound already allow outbound)
+
+Port fowarding->NAT
+
+VPC
+When you launch an instance into a default VPC, we provide the instance with public and private DNS hostnames that correspond to the public IPv4 and private IPv4 addresses for the instance.
+Not default =When you launch an instance into a nondefault VPC, we provide the instance with a private DNS hostname but not public
+	
+Subnet 
+ - 5 addresses reserved 
+
+
+Internet gateway
+-Internet Gateway ID  cannot be used as an Internet Gateway ID as the custom source for the inbound rule
+ provide a target in your VPC route tables for internet-routable traffic 
+	- perform network address translation (NAT) for instances
+
+Bastion Host
+	- Bastion Host = the ec2 in the public subnet (so to access the private ec2)
+	- Ssh
+Nat Instance (network addresse translation)
+	- Get wifi from NAT instance (public EC2)
+	- Outdated
+	- Can serve as a bastion host too
+	- Support PORT-Forwarding
+	- Bandwidth depends on EC2 type
+	- Not managed
+NAT gateway
+	- Multi NAT gateway in multi az
+	- Higher bandwith
+	- Differenece = Managed by AWS  and can be multi-az
+DNS resolution in VPC
+	- Enablednssupport
+	- Enabledbshostname
+VPC Reachabiliy Analyzer
+	- Check two endpoints whether can access each other
+VPC Peering
+	- Connect two VPC tgt
+VPC Sharing
+	- Share subnet not VPC itself!
+VPC endpoint
+	- Interface  (provisions an ENI (private ip addresss)) - most AWS services (like SQS)
+	- Gateway - use as a target in a route table S3 + DynamoDB. And then update 
+
+Flow logs
+
+Site to site VPN18/04/2022 
+	- Fast to set up but not perform well
+	- Virtual private gateway
+	- Customer gateway(onprem)
+	- Needa enable Route Propagation for Virtual Priavate Gateway
+	- Encrypted
+	VPN CloudHub
+	= the same set up to site to site VPN but a lot og customer gateway with same VPG
+	
+Direct Connect
+	- PRIVATE ( not internet)
+	- Not encrypted
+	- Take a month
+	- low latency
+	- Direct Connect Gateway for multi Region 
+	- High Resiliency for Critical workload = multiple location
+	- Maximum Resiliency = Multiple location + multiple direct connect endpoint
+
+Direct Connect + Site to Site = most powerful - Ipsec-encrypted
+
+Private Link
+	- Scalable version of VPC peering, Consumer = scalable (not internal)
+	- NLB (Application side) x ENI (customer side)
+	- xpose a service to 1000s ofVPC
+	- Network Load balancr + ENI from the customer app !!
+	- 
+	
+	- 
+
+Classic Link
+	- For EC2 to VPC
+	
+Transit Gateway
+	- Star structure
+	- The only transitive!!
+	- Regional (if not can use VP gateway)
+	- IP Multicast
+
+Egress is way more expensive than Ingress
+
+Egress only Internet Gatway
+Have internet but cannot be reachable (inbound) by the internet
+
+Security Groups are stateful, so allowing inbound traffic to the necessary ports enables the connection. Network ACLs are stateless, so you must allow both  inbound and outbound traffic

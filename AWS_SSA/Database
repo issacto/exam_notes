@@ -1,0 +1,82 @@
+RDS
+	- Read Replication is ASYNC
+	- Mysql and postgres have IAM Database authentication (no password)
+	- Amazon RDS automatically initiates a failover to the standby, in case the primary database fails for any reason 
+	- When failover, apply OS update and replace the secondary to primary
+	-  TO encryption = create a new master DB by taking a snapshot of the existing DB, encrypting it, and then creating the new DB from the snapshot. Use DMS to combine replicas
+	- For read Replica, You need to create a snapshot of the master in order to encrypt it !!!
+	- NO cross oveer
+	- Backup up to 5mins (Retention up to 7days) Enhanced Monitoring of RDS (1 min)
+	- Enable encryption in transit
+		○ Download the AWS-provided root certificates. Use the certificates when connecting to the RDS DB instance
+	Amazon CloudWatch can monitor the CPU usage of your database instance, but by default it doesn't provide the percentage of CPU bandwidth and total memory!!!! consumed by each database process in your RDS instance.  
+	
+	RDS does not encrypt by default
+	
+	
+Autoscaling (capcity)
+	- RDS autoscaling is a function that automatically scales the capacity when the data capacity is insufficient. 
+Read Replicas
+	- Scalability, availability
+	- = failover (not global)
+	- NO MULTIMASTER for RDS
+	- Read Replicas add new endpoints with their own DNS name. We need to change our application to reference them individually to balance the read load. Multi az no need.
+	- Now can Create a read replica as a Multi-AZ DB instance (HA+ Scalable)
+RDS MultiAZ
+	- High availability
+	-  SYNC Replication (Aurora =async)
+	- Upgrades to the database engine level require downtime. Both primary and standby will upgrade at the same time
+RDS Region
+	- Disaster recovery
+Aurora
+	- Failover, read replica
+	- Multi Master = immediate failover = NOT GLOBAL; WITHIN A REGION only
+	- Aurora Serverless 
+		○ Auto scale (RDS cant) / normal does not work
+	- Global = across regions
+		○ (up to 5 secondary regions) Replica Tiers = 0-15; smaller = more  critical
+			§ If failover, smallest + largest size
+	
+	- Replica for availability up to 15 replicas
+ElasticCache
+If ask for sub-millisecond latency to read queries. Then not replica but Cache!!!!
+	- Redis 
+		○ RedisAuth,  from Lambda
+		○ Read replicas
+		○ HIPAA eligible
+		○ Support geospatial data
+		○ Backup and restore
+		○ HA
+		○ Pub/Sub
+	- Memcache
+		○ Multithreading archi
+Dynamodb
+	- Use stream for lambda
+	- Data stream to lambda for Compliaance!!!
+	- No read replica, fully managed
+	- DAX = solve hot partitions, access concentration; read ho ging (if write and read then use elasticache) Solve 
+	- Global = world-wide, replicated
+	- By default, all tables are encrypted under an AWS owned customer master key (CMK) in the DynamoDB service account. 
+	- all DynamoDB tables are encrypted under an AWS owned customer master key (CMK), which do not write to CloudTrail logs
+	- Best practice 
+		- Keep item sizes small.
+		- If you are storing serial data in DynamoDB that will require actions based on data/time use separate tables for days, weeks, months.
+		- Store more frequently and less frequently accessed data in separate tables.
+	- Unique feautre: Web session management + save metadata of S3
+Neptune
+
+Redshift
+	- Redshift Spectrum
+		○ Query S3 directly
+	- If need SQL + NOSQL querying -> this is the answer
+	- Enhanced VPC Routing = routing within VPC
+
+Data transfer charges for replicating data across AWS Regions ONLY
+
+Create an encrypted snapshot of the database, share the snapshot, and allow access to the AWS Key Management Service (AWS KMS) encryption key
+
+
+Strong vs eventual consistency
+Eventual consistency is weak. Sometime users receive obsolete data (no longer in use).
+Dynamodb default = Eventual (read is faster)
+Change to strong consistency

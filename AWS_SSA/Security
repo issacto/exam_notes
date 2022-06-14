@@ -1,0 +1,23 @@
+Cloutrail
+	- History of API
+	- Governance, audit  and compliance of your aws accs
+	- Organization trails = Automatically add policy to the members in the 
+	- Who made this call bascially
+	- Events
+		○ Data event (PUT GET PATCH… lambda)
+		○ Management events (IAM )
+	- 90 days only
+	- create a CloudTrail trail in the management account with the organization trails option enabled
+AWS Config
+ - assess, audit, and evaluate the configurations of your AWS resources. 
+Compliance!
+	- Config to check the key. Use eventbridge to execute an Lambda function
+Security Token Service
+
+Active directory
+	- Managed Microsoft (SQL access + trust relationship, SSO) Directory!
+	- AD Connect ( no directory-aware workloads)
+
+AWS X-RAY
+	- Debug and trace data across different accs!!!!!!!!!!!
+	- API Gateway!!!!

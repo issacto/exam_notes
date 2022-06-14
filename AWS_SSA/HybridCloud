@@ -1,0 +1,34 @@
+Storage gateway (ONGOING DATA)
+	- Cached vs Stored
+		○ Cached = Primary S3
+		○ Stored = Primary onPrem
+	- ONGOING DATA!
+	File gateway
+		○ NFS/SMB (Server Message Block)
+		Network attached storage! NAS
+		○ AD
+		○ JSON
+	Volume Gateway
+		○ FOR Block storage (EBS)
+		○ CACHED/STORED
+		○ ISCSI
+	Tape Gateway
+		ISCSI
+		
+		
+FSX
+	- Windows. Not just window (=answer (also SMB protocol, Window NTFS protocol)
+	- Can connect with windows/linux too
+	- Works well with Microsoft active directory
+	- For remote connection too
+	- millions of IOPS!! Faster than EFS
+FSX for Lustre
+	- For high computing but not support MS File system
+	- Seemless integration with S3!!! (cold data)
+	- Fargate to FSx for Lustre NOT supported
+	- FSx for Lustre provides the ability to both process the 'hot data' in a parallel and distributed fashion as well as easily store the 'cold data' on Amazon S3.
+	
+SMB protocol
+Supported by FSX Windows and file gateway
+
+

@@ -1,0 +1,63 @@
+IAM
+	- Permission Boundry - maximum permission user can get
+		○  IAM permission boundary only applies to role/user, NOT GROUP
+		○ Very useful
+If Bill too high Consolidated billing has not been enabled.
+
+Credentials Report
+
+-> IAM Credentials report (account level) (Report all users and status of their credentials)
+-> IAM Access Advisor (user-level) (When last accessed)
+
+IAM user vs policy
+
+IAM group is for USER only! Cannot be identitified as a principal in IAM policy!
+
+Policy 
+	- Effect, Principal, Action, Resource, Condition
+User migration
+Migrate the account using the AWS Organizations console
+
+
+Migrate Accounts from one to another organisation
+	- Use AWS Organisation Console
+
+(order is important)
+1. Remove the member account from the old organization 2. Send an invite to the member account from the new Organization 3. Accept the invite to the new organization from the member account
+
+IAM service (service level)
+ supports only one type of resource-based policy called a role trust policy
+
+IAM role service once assigned. No need to define another trust policy
+
+Instances should use IAM Roles for delegation not user accounts.
+
+
+"aws:SourceIp": "34.50.31.0/24" = IP of the caller of the API!!!!! NOT the resource IP!!!
+Private address => 172,10.0.0,192
+
+
+aws:RequestedRegion represents = the requested resources in the region
+Admin -> cannot enable/disable MFA
+
+
+Service Control Policies (account level)
+	- SCPs aren't available if your organization has enabled only the consolidated billing features
+	- USE IAM Boundary if question does not mention using AWS Organisation!!
+	- Does not affect Service-linked acc, can affect root acc
+	- Cannot use specific aws product
+	- Who can access services and who cant
+	- Must have an explicit allow if not cannot access
+	- If a user or role has an IAM permission policy that grants access to an action that is either not allowed or explicitly denied by the applicable SCPs, the user or role can't perform that action.
+	
+AWS Security Token Service
+Limited and temporary access
+WebIdentity, SAML
+
+
+SAML federation 
+	- use Active Directory credentials
+
+
+AWS federation 
+Federation lets users outside of AWS to assume user temporary role for accessing AWS resources. 

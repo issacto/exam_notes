@@ -1,0 +1,138 @@
+A process replaces an existing object and immediately tries to read it. Amazon S3 always returns the latest version of the object
+
+ENABLE CORS lol
+
+Strong Consistent for CRUD!
+
+Snowball cannot directly inserted to Glacier. Just upload to Glacier is ok!!!
+
+Standard> Standard_IA>Intelligent>OneZone>Glazier (90days)>DeepGlazier (Vault lock, data cant be deleted, VAULT lock policy for compilance)(180 days, 12-48hrs)
+
+
+Glazier
+Expedited = 1-5mins
+Standard= 3-5hours
+Bulk =5-12hrs
+
+Deep Glazier (NO EXPEDITED)
+Standard 12 hours
+Bulk 48 hours
+
+Only S3 and Flazier are encrypted at rest/moving (AES+SSL)
+Lifecycle! least 30days! to transit from 
+S3 Multipart up load and transfer acceleration
+	- Multipart - Below 5TB dou ok and above 100MB
+	- Transfer acceleration - if no acceleration no needa pay 
+	- There are no S3 data transfer (not acceleration) charges when data is transferred in from the internet
+Aside from Standard, other has minimum duration (30days+)
+Different S
+3,500 PUT/COPY/POST/DELETE or 5,500 GET/HEAD (use cache if exceed, if not use cloudfront)
+
+Event Notifiaction
+S3 Event Notification (async) to lambda
+S3 event destination = SNS/SQS/Lambda ( NOT FIFO!)
+
+S33 Select = Redshift (SQL)
+
+
+Presigned URL 
+ - bypass web server and directly upload to S3
+	- Most secured way for sharing object
+Encryption19/04/2022 
+	- SSE-S3 - AWS256
+	- SSE-KMS -Audit and user control!!  Control who can access to the keys
+	- SSE-C (encrypt and decrypt in http) - Encryption performed on S3, key not stored.  HTTPS must be used. +KMS to store the key = perfect solution
+	- SSE-Client Side (just encrypt) - Encryption performed on Client
+
+
+To encrypt an object at the time of upload, you need to add a header called x-amz-server-side-encryption
+
+ S3 Byte-Range Fetches
+
+	-  issue a Byte Range Fetch for the first 250 bytes.
+	-  No parameter
+
+
+network file system = FES
+arn:aws:s3:::example-bucket/*
+
+ user level as well as account-level  = Bucket level policies!!!!!!!!!!!
+
+Bucket policy the best for ONLY Ec2
+EC2 access = Referral from origin
+
+If just connect to EC2 
+IAM Role
+
+User level = User policy (IAM)  = fine-grained 
+Account level = ACL
+
+Always Cloudfront  to improve speed (if smaller than 1GB, more then use )
+
+S3 Cross Region Replication 
+	- Async
+	- Copy data from the source bucket to the destination bucket using the aws S3 sync command
+	
+	
+
+S3 Access Logs = analyze/audit (analyze = cloudtrail (account level why developer set this). Audit =access logs!!)
+
+Object Lock (versioning must be enabled first)
+	- Block an object version deletion for a specific time
+	
+S3 Analytics – Storage Class Analysis!!!!!
+	- To see when to transition from standard to standard IA (cant do onezone and glacier) ONLY!!!!
+
+ACCESS CODE
+
+{
+   "Version":"2012-10-17",
+   "Statement":[
+      {
+         "Effect":"Allow",
+         "Action":[
+            "s3:ListBucket"
+         ],
+         "Resource":"arn:aws:s3:::mybucket"
+      },
+      {
+         "Effect":"Allow",
+         "Action":[
+            "s3:GetObject"
+         ],
+         "Resource":"arn:aws:s3:::mybucket/*"
+      }
+   ]
+}
+
+
+
+
+S3 Website
+http://bucket-name.s3-website.Region.amazonaws.com
+http://bucket-name.s3-website-Region.amazonaws.com
+Naming
+
+EC2 Instance store is faster (IO) than S3 Standard
+
+Copy data from the source bucket to the destination bucket using the aws S3 sync command
+
+
+Metadata, which can be included with the object, is not encrypted while being stored on Amazon S3
+
+Bucket ACL vs IAM acl????
+
+AWS IAM policies can be used to grant IAM users’ with fine-grained control to Amazon S3 buckets. (IAM preferred to bucket policy)
+
+Programmatic access (for ec2 to s3)
+
+
+Bucket policy is not preferred
+But if used:
+Use a bucket policy to only allow referrals  (!!!!) from the main website URL
+SHARE across ACCOUNTS
+
+If you want to allow another AWS account to use the S3 buckets that your account owns, you need to allow both IAM and bucket policies
+
+
+If you enable server-side encryption with an encryption key for your S3 bucket, each access log file is automatically encrypted before it is stored in your S3 bucket and decrypted on access. 

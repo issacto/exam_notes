@@ -1,0 +1,90 @@
+	1. Introduction 
+	• IBM Cloud: High Level Overview
+		Robust Console, IAM, Catalog, Acc Billings
+		Access= IBM Console / Command line interface
+	• Locations, Regions, and Zones
+		6 regions, 18 zones, 60 centers
+		Multi zone cluster = >3 zones within 6miles
+		Ibm = multizone regions, single zone region
+	• Account Types and Support Plans
+	Lite, pay as you go, subscription
+	Support = Basic, Advacned (1to8 hours reponse) and Premium (Technical Account Manager)
+	Case Severity = 4Minimal, 3 Some, 2 Significant, 1 Critical
+	• Billing and Usage
+		Monthly overview or specific service for review
+	• Cost Estimator
+	Pdf, csv, xlsx
+	• Identity and Access Management (IAM) 
+		Users, access groups, resource, resource groups (to provide access to multiple resources at once.)
+		
+		Resource = an instance of service
+		
+	2. Infrastructure
+	• Virtual Servers and Bare Metal 
+		Virtual Servers - cheapest (hourly and monthly)
+		Bare Metal Servers (Vmware, Cirtix, Cloud linux images)- performance, can be no OS
+		Power System Servers - performance
+		Hyper Protect Servers (LinuxOne) - Security
+		
+		Plan: Public (), Dedicated, Transient, Reserved
+	• Block and File Storage
+		Block = Internet Small Computer Systems Interface (iSCSi) storage
+		Block up to 12TB
+	• Object Storage
+		Up to 10TB for an object
+		Cross region, regional, single data center
+		Tier -> Smart, Standard, Vault (once a month), Cold Vault (Data only access a few times in a year)
+	• Network Services
+		Gateway Appliance, VPN, VLAN
+		CDN is a highly distributed platform of servers used to help minimize delays. IBM Cloud’s CDN services is based off Akamai 
+		A load balancer is used to distribute traffic among virtual servers. 
+	• Virtual Private Cloud
+		Resource Group Name and SSH Key are required when creating a virtual server in a VCP
+		Generation 1 or Generation 2
+		Private subnets and encrypted communication Achieve isolation between workloads on VPCs on IBM Cloud.
+	• Vmware
+		Vmware solution Dedicated (Bare Metal) vs Share (Vmware Cloud Director)
+		Veeam is used to back up and replicate virtual machines on VMware.
+		
+	3. Deploying
+	• Containers and Kubernetes
+		Container =package that contains application source code dependencies, like runtimes, binaries, libraries, and data. 
+		Container is configured to communicate with a specific k8s cluster
+		+= run uniformly, increase speed and security
+		K8s isnt simple
+	• OpenShift
+		- Has Kubernetes’ core framework plus all of OpenShift's abstractions.
+	• Cloud Foundry 
+	• Cloud Functions
+		Action = building blocks
+		
+	4. Services on IBM Cloud
+
+• Databases
+	Db2, cloudant nosql (document-orianted), redis
+• Integration
+	Api connect, app connect, mq, event stream (Watson Internet of Things (IoT) and IBM Cloud functions, Kafka)
+• Artificial Intelligence 
+	Watson studio ML, NLP
+• Analytics
+	Analytics engine (Hadoop + Spark), Streaming analysis, db2 wawrehouse
+• DevOps
+	Tekton pipelines are specified in yaml
+• Blockchain
+Hyperladger Fabric
+• Internet of Things
+• Cloud Paks
+ data = integrates data management, data governance, and analysis 
+Multicloud
+All on Openshift
+
+Openshift is based on opensource project OKD
+Webhook is a Red Hat OpenShift build trigger. 
+Operator at Openfhift = RH, Certified and Community
+
+What enables communication to the internet for all virtual server instances on the attached subnet?
+Public Gateway
+
+
+A VPN service can assist a client in connecting an application on IBM Cloud with the client’s private network.
+

@@ -1,0 +1,52 @@
+WAF + Cloudfront very secured!!
+
+
+
+
+Configure encryption for the Amazon EBS volumes and Amazon RDS database with AWS KMS keys
+
+Analytics = create another read replica
+
+Inbound vs Outbound (most time = inbound for security)
+
+
+EFS can communicate with Fargate!
+
+Cost: S3<EFS<EBS
+
+To coordinate Availability Zones across accounts, you must use the AZ ID,
+
+Dynamodb will not cause downtime when autoscale but Aurora will 
+
+If sso of company (like IBM's), use STS and SAML
+
+Allow penetration test for 8 serivces
+
+EC2 -> database = use IAM role
+
+EC2 - high avilability of 4 nodes = use 3 zones with 2 nodes so that if one zone fails, still available! 
+
+Set a password policy for the entire AWS account
+
+EC2 ASG Spot+ Reserved = launch template
+Web server -> database = security group
+
+Cheaper- Reserved = all here
+・EC2 Reserved Instance
+・RDS Reserved Instance
+・ElastiCache Reserved Node
+・DynamoDB Reserved Capacity
+・Redshift Reserved Node
+
+
+the only resource-based policy that the IAM service supports? = Trust Policy
+The instance has failed the ELB health check status 
+ASG wont terminate the instance
+
+
+Caching cheaper than Replicas!
+
+Never Allow security group of SUBNET! Overkill even ASG!
+CIDR 
+2^8=256
+/24 = 2^8!!!!!! *(not 7 !)

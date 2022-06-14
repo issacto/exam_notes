@@ -1,0 +1,39 @@
+Lambda
+	- No php; C# ok 
+	- Limit = 1000 concurrent ( need to contact aws to add more)
+	- 512 MB maximum
+	- AWS step function = workflow in a easy way
+	- AWS BATCH
+		○ Lambda only up to 15 mins per execution. If more, need to use ec2
+	- Lambda Layer for reuse 
+	- Track number of request and latency
+API Gateway
+	- Can cache
+		○ Cache and then needa configure a TTL . The default TTL value for API caching is 300 seconds. The maximum TTL value is 3600 seconds. TTL=0 means caching is disabled.
+	- When too many read request, = 429 too many requests When us throtting!!!
+	- stateless client-server communication, WebSocket is stateful
+	- Throttle rules to limit requests (perclient mode to restrict client max request)
+Cognito
+	- User - access to aws (the one I used),authenticate/authorisation JWT
+	- Identity - have aws credentials to access!!!, STS
+	- Use Cognito Authentication via Cognito User Pools for your Application Load Balancer!
+	
+Cheapest scheduled job
+Schedule a weekly CloudWatch event cron expression to invoke a Lambda function that runs the database rollover job
+
+Step function
+AWS Step Functions is a web service that makes it easy to coordinate your work between distributed application components.
+Managed serverless
+
+Simple workflow
+Not managed
+Use only when you need external signals to intervene and child processers return to parent
+
+
+SAM
+AWS Serverless Application Model (AWS SAM) is an extension of AWS CloudFormation that is used to package, test, and deploy serverless applications.
+
+
+ECS
+taskRoleArn to specify IAM role
+Cannot add Container instances to a group. Use taskroleArn

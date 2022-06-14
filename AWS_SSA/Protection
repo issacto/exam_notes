@@ -1,0 +1,38 @@
+
+Web Application Firewall
+	- Block = firewall!
+	- Apply to three things - ALB,m API Gateway, Cloudfront
+	- Rate based rules for DDOS (not directly deal with, directly deal with needs shield)
+	- GEO match
+	- Prevent SQL injection nad Cross-site scripting
+
+Firewall Manager
+	- WAF rules
+	- Shield Advanced rules
+	- Security groups in VPC rules
+Guard Duty
+	- VPC Flow Logs, DNS logs, CloudTrail events
+	- Suspend = stop; Disable = stop + delete
+	- Unathorised applciation (such as cryptomining)
+	- Can automate with cloudwatch event
+AWS Shield
+	Standard
+		○ SYN/UDP floods, layer 3/4 attack
+	Advanced
+		○ 24/7 ddos response team
+		○ Basicallyt ddos
+
+ADM AWS Certificate Manager
+= SSL certificates collector
+= IF you want ALB +EC2 SSL!!!
+
+
+AWS Inspector
+	- For app on EC2
+	- Security
+	- CIS benchmarks
+	- Common vulnerabilities benchmark
+
+Macie
+	- Protect sensitive data PII
+Cannot be used with RDS

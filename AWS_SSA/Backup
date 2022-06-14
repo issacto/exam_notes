@@ -1,0 +1,12 @@
+RPO, RTO
+
+Disaster Recovery
+	1. Pilot Light
+		a. Small part of the app (usually critical)is always running
+	2. Warm Standby
+		a. Limited amount 
+		b. Full system is up and running
+		c. Can be scaled to production load
+	3. Multi/Hot site
+		a. Very low PTO
+expensive

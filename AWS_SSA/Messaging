@@ -1,0 +1,64 @@
+SQS (FIFO) (Standard thgoughput = unlimited)
+	FIFO queues support up to 300 messages per second (WITHout batching) ; With barching = 3000
+	- Delay queues to delay message sending
+		- IF you want CERTAIN message to be delayed, use Message Timers
+	- Default retention days is 4!!!
+	- Make sure that the name of the FIFO queue ends with the .fifo suffix
+	- Deadletter queue (up to 14 days)
+	- postpone up to 15 mins
+	- For decouple!! (third part app= eventbridge)
+	- Long request = cheaper way to minimize cost
+	-  the Standard SQS queue is only allowed as an Amazon S3 event notification destination, whereas the FIFO SQS queue is not allowed.
+	- Temporary Queue Client
+		- request-response message
+		- Cost effective
+	- If multiple instances, once only thn SQS no SNS
+	- Use Priority for prioritise
+	- Visibility timeout
+	- Long Polling:
+	– Uses fewer requests and reduces cost.
+	– Eliminates false empty!! responses by querying all servers.
+	– SQS waits until a message is available in the queue before sending a response.
+	- Short Polling:
+	– Does not wait for messages to appear in the queue.
+	– It queries only a subset of the available servers for messages (based on weighted random execution).
+	– Short polling is the default.
+	– ReceiveMessageWaitTime is set to 0.
+
+SNS (have FIFO)
+	- Use case = to monitor EC2 and send 
+	- MOBILE NOTI! Email noti = SES
+	- Does not store!
+	- 
+Kinesis
+	- Better option for Streaming, REALTIME!!
+	- Increase shard to when read exceeds
+	Kinesis Data Stream
+		- Use lambda, Ec2, Data Analytics
+		-  stores data for a maximum of 365 days, you can easily run the audit application up to 7 days
+		- Processing
+		- ProvisionedThroughputExceededException -> use batch
+		- Enhanced fanout to add IO
+	Kinesis Firehose
+		- Go to database (S3/ Redshift)  (NOT Dynamo/EMR)and other external stuff
+		- Load data only
+		- Automatically scales (Data stream needs to provision; this dun need)
+	Kinesis Data Analytics
+		- Need data stream
+	
+Amazon MQ
+	- MQTT, WSS and other protocols
+
+EMR 
+	- Big data (hadoop!!!), MACHINE LEARNING and streaming data analysis
+	- Autoscale with spot instances
+	- Analyze and process data
+	- (vs Glue)
+	- To lower cost = use spot instance
+	- NOT Serverless, needa manage underlying resources
+	
+ data processing, machine learning,
+
+
+
+When a Kinesis data stream is configured as the source of a Firehose delivery stream, Firehose’s PutRecord and PutRecordBatch operations are disabl

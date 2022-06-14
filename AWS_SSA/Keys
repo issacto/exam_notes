@@ -1,0 +1,18 @@
+KMS - once a year; manual = Every 90 days, 180 days
+	- CMK = customer managed key; minimum of 7 days; maximum of 30days upon deletion ('pending deletion' status) after deleted
+	- ENCRYPTION SERVICE! NOT STORING SECRETS!
+	- For encryption
+SSM
+	- Get database url
+	- Cant do automatic rotation
+SM -
+	Can do rotation too!
+	Amazon RDS
+HSM - hardware
+	- Use with SSE-C
+
+
+
+KMS vs HSM 
+	- KMS = 140-2 Level 2
+	- HSM = 140-2 Level 3 

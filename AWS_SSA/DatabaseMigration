@@ -1,0 +1,35 @@
+Datasync 
+	- Online, easiest
+	- Multipart
+	- NAS/NFS>SMB protocol
+	- For automation
+	- 50mbps is too little
+Snowcone
+	- 8TB
+	- Provide your own battery (use snowball edge if possible)
+Snowball Edge
+	- Compute Optimized 42Tb STORAGE CLUSTERING
+	- Storage Optimized 80Tb
+	- Cannot directly to Glazier, needa go through standard s3 plus lifecycle
+Snow mobile
+	- 100PB (rec for >10PB)
+
+USE AWS Opshub to manage Snow Ball Family device
+
+
+
+Database Schema 
+
+	- AWS Database Migration Service
+		○ Continuous and Easy 
+		○ AWS DMS enables you to seamlessly migrate data from supported sources to relational databases, data warehouses, streaming platforms,
+		○ Effortless than GLUE for replicaiton data!
+		○ S3 to Kinesis
+	- AWS Schema Conversion Tool
+		○ Solutions Architect should use the SCT to extract and load to Snowball Edge and then AWS DMS in the AWS Cloud.
+		○ Schema conversion is for different relational schema eg Oracle- > posgres
+		○ For large database
+
+
+If use snowball edge + SCT +DMS
+Use SCT to snowball to edge first then pass to DMS

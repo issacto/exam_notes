@@ -1,0 +1,32 @@
+CloudWatch (Performance monitoring)
+	- LOGS (EC2 and stuff)
+		○ Monitor logs
+		○ Unified agent
+		○ Collect additional system metrics RAM, CPU, Swap Space. Netstat
+		○  CloudWatch Container Insights  for EKS/ containerization
+		○ Install an Amazon CloudWatch agent on the instances. Run an appropriate script on a set schedule. Monitor SwapUtilization metrics in CloudWatch
+		○ FOR lambda metrics:
+			§ Latency per request
+			§ Total number of requests
+	Alarm
+		○ Alarm for billing!
+		○ Alarm for certain metric
+		○ (display!! for current usage and limits = Trusted Advisor)!
+		○ Alarm +SNS!!! 
+		○ EC2 fail and trigger an !!
+	Event
+	 - you define the event to be triggered
+	 - Cannot use DynamoDB as a target for a CloudWatch event
+	Guard DUty
+		CRON
+Eventbridge
+	- Use to decouple too 
+ - new version of cloudwatch
+
+
+Health Check!!
+	- ALB health check = check connection
+	- Route 53 = check FAILOVER
+
+
+

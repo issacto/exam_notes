@@ -1,0 +1,389 @@
+https://learn.hashicorp.com/tutorials/terraform/associate-questions
+
+57-60 questions
+~ 42 questions correct and 18 wrong
+
+
+	1. Understand Infrastructure as Code Concepts
+		a. No more clicks
+		b. Declarative
+		c. Enable Devops
+	2.  Undertstand Terraform's Purpose
+		a. Terraform is an immutable declarative provisioning language
+		b. Automate
+		c. Communication with API
+		d. Support a lot of cloud providers
+		e. Track State
+		f. Increased Performance 
+	3. Understand Terraform Basics
+	
+	Variables
+	
+		A. Types:
+		Primitive: Basic: String/ Number/ Bool
+		Complex: List, Set, Map, Object, Tuple
+			Comples: 
+				Collection = One type = list/map/set
+				Structural = Multiple type = object/ tuple
+				*keyword = any
+	
+		B. Var "my-var"{
+		Description ="my variable"
+		Type = "String"
+		Default = "Hallo"
+	}
+	
+	Commands
+	
+		1. Init - download modules and plugins + setup backend
+		2. Plan - allow the user to review (-/+/~ update)
+			a. terraform plan -var-file=terraform.tfvars ok!!
+		3. Apply - deploy + update state file
+		4. Destroy - non reversible command
+		5. State - ????
+		6. Fmt - readability and consistency
+		7. Taint - destroy  and recreate
+		8. Import (with ID) - add state of a outside resource
+		9. Validate - only syntax (unlike plan)
+		10. Show  = inspect (human readable)!!!!
+		11. Force-unlock = removes the lock on state for current config
+		12. Providers- show providers
+		
+	
+	Reserved Keywords
+	
+	
+		1. Provider  (use init to initialise) (=plugin)
+		Provider "name "{
+		 //configuration para
+}
+		2. Resource "resource provided" "name"{
+		  //  Resource address = "resource provided"."name"
+		}
+		3. Data  "resource provided" "name"{
+		// Retrieve data outside terraform
+		Instance_id =""
+		//  Data address = data."resource provided"."name"
+		}
+		4. Output ""{
+		 description = ""
+		 value = ""
+		} //return after apply
+		5. Module""{}
+		
+	Provisioners
+	
+		A. When: Creation-Time (default)/Destroy-Time
+		B. How: May need SSH/WINRM
+		C. Why: Last resort; invoke actions not covered
+		D. Command return 0, =  not tainted
+		E. Example:
+			a. Resource "" ""{
+			  provisioner "local-exec"{ // or can "remote-exec"
+			      when = destroy
+			      command = "echo "gogogogo" > status.txt"
+			on_failure = continue/fail (default)
+			  }
+			}
+			
+	Providers:
+	
+		Several Provider 
+		
+		provider "aws" {
+  region = "us-east-1"
+}
+		provider "aws" {
+  alias  = "west"
+  region = "us-west-2"
+}
+		resource "aws_instance" "foo" {
+  provider = aws.west
+		# ...
+}
+		
+	
+	
+	4. User Terraform CLI
+		Commands:
+			A. Terraform workaspace new <anme>
+			B. Terraform workspace select <name>
+		Call using ${terraform.workspace}
+			Example: ${terraform.workspace} == "Default"? yes:no
+			
+		Logs:
+		export TF_LOG=TRACE //Trace is the most verbose one
+		export TF_LOG_PATH=./terraform.log 
+		
+	5. Interact with Terraform Modules
+	
+	Module = container for multiple resources used together
+	All terraform config has at least one module
+	Can be downloaded from Public/ Private Registry / Local System
+	Import must be declared in the file before
+	Import a module :
+		 module ""{
+			source = ""
+			Version =""
+		}
+		//Call
+		Resource "" ""{
+		Subnet_id = module.xxx.id
+		}
+	Export a module:
+		Normal resource and output!!
+		
+		
+		# To specify a Tag
+		module "vpc" {
+  source = "git::https://code.quizexperts.com/vpc.git?ref=v1.2.0"
+}
+		# To specify a Branch
+		module "vpc" {
+  source = "git::https://code.quizexperts.com/vpc.git?ref=hotfix"
+}
+		
+	Public registry
+	Named terraform-<PROVIDER>-<NAME>
+	Public GitHub
+	x.y.z tags for releases.
+	<NAME> segment can contain additional hyphens
+	
+	Private Registry Module Sources
+	
+	<HOSTNAME>/<NAMESPACE>/<NAME>/<PROVIDER>
+	
+	module "vpc" {
+	 source = "app.terraform.io/example_corp/vpc/aws" 
+	version = "0.9.3"
+	 }
+	
+	For example, to use HTTPS or SSH:
+	module "vpc" {
+  source = "git::https://example.com/vpc.git"
+}
+	module "storage" {
+  source = "git::ssh://username@example.com/storage.git"
+}
+	
+		
+	6. Navigate Terraform Workflow
+		a. Write -> Plan -> Apply
+	7. Implement and Maintain State
+		a. Download + Unzip + place it on $PATH
+		b. Git should ignore tfstate and ftvars (sensitive)
+		c. It maps real-world resources to Terraform configuration/code.
+		d. Stored in Terraform.tfstate (= json file) (State locking)
+		e. Commands:
+			a. Terraform state list  (all resources tracked)
+			b. Terraform state rm (delete a resource)
+			c. Terraform state show (show detatils of a resource )
+		f. Remote = allow sharing state file btw distributed teams
+				1) Parallel executions don’t concide
+				2) Example: 
+					a) Terraform{
+					Backend "s3"{
+					  region=
+					  key =
+					  bucket = 
+					  }
+					}
+	8. Read, Generate and modify configuration
+		a. Built in functions : join/ file/ max/ flatten
+		b. Dynamic Blocks:
+			a. For resource/data/ provider/provisioner
+			b. Example:
+				1) Dynamic "ingress"{
+					For_each = var.rules
+					content{
+						Port= ingress.value["a"]
+						Name=  ingress.value["b"]
+					}
+				}
+		c. Example terraform {
+		     required_version = ">=0.13.0" // itself
+		     required_providers {
+		         aws = ">=3.0.0"
+		     }
+		} 
+		
+	9. Understand Terraform Cloud and Enterprice Capabilities
+	https://www.datocms-assets.com/2885/1602500234-terraform-full-feature-pricing-tablev2-1.pdf
+	1. Sentinal
+	- Enforce (CIS/ instance type/no traffice on port)policies on your code
+	-  between the plan and apply phases of a Terraform run.
+	- Proactive
+	- Has its own policy language
+	- Designed for non programmers
+	- Benefits:
+		○ Sandboxing
+		○ Codification
+		○ Version Control
+		○ Testing and Automation 
+
+	2. Vault Provider
+	- Secrets management software
+	- Provisions credentials and rotates them
+	- Benefits:
+		○ No need to manage long lived credentials
+		○ Inject secrets at runtime
+		○ Fine grained acls for access
+	3. Registry and Cloud 
+	- Registry:s
+	- A repository of publicly available Terraform providers and modules 
+	- Can collab with other ppl
+	- Workspace
+	- Stores old version
+	- Record of all exe activity
+
+	
+
+
+	4. OSS vs Cloud Workspace
+		a. Cloud workspace is called on  API/CLI
+		b. Terraform cloud always encrypt at rest and 
+
+Other
+	1. Roles and Team Management is not free for customer
+	2. Secrets are persisted to the state file and plans even if use Vault
+	3. One workspace for one repo
+	4. Only  Terraform Enterprise provide clustering
+	5. ~> 1.2.0 = 1.2x < 1.3
+	6. Terraform uses parallelism = 10 resources provision concurrently
+	7. HashiCorp recommends that you use 2 spaces between each nesting level
+	8. Terraform init downloads plugins into a subdirectory of the working directory, .terraform/plugins
+	9. For local state, Terraform stores the workspace states in a directory called terraform.tfstate.d
+	10. count is a reserved word
+	11. An alias meta-arguement is used when using the same provider with different configurations for different resources
+	12. You can use required_version to ensure that a user deploying infrastructure is using Terraform 0.12 or greater, due to the vast number of changes that were introduced.
+	13. Vault provider, in what phase does Terraform actually retrieve the data required - Terraform plan
+	14. no Terraform binary for Unix  
+	15. Tostring is not a string function
+	16. Terraform get and terraform init used for install new modules
+	17. Self-Service Infrastructure, Audit Logging, and SAML/SSO are only available in Terraform Cloud for Business or Terraform Enterprise.
+	18. A terraform list is a sequence of values identified by consecutive whole numbers starting with zero.
+	19. lookup({a="hello", b="goodbye"}, "c", "what?") lookup c it noc then give back what !!!!
+	20. Terraform Enterprise can clustered deployment with POSTgres
+	21. Terraform validate must be initiliazed before
+	22. most_recent = latest version, not most recently use
+	23. Terraform plan -out can be used to save for later terraform apply
+	24. Iac doesn’t always have the latest version
+	25. Local  can be used multiple times within a module without having to repeat it
+	26. Use old plugin before, now delete the requirment of older version plugin, what will happen -> Still Use old plugin
+	27. terraform init -upgrade sin wui upgrade
+	28. Terraform state can contain sensitive data, depending on the resources in use and your definition of "sensitive."; no sensitive data block command
+	29. Although main.tf is the standard name, it's not necessarily required.
+	30. During a terraform apply, any resources that are successfully provisioned are maintained as deployed. On the other hand, resources that failed during the provisioning process, such as a provisioned, will be tainted to be recreated during the next run.If a creation-time provisioner fails, the resource is marked as tainted. A tainted resource will be planned for destruction and recreation upon the next terraform apply. 
+	31. export TF_LOG= = disable
+	32. Best Practice: For deployment and production use different work directories
+	33. terraform import command currently can only import one resource at a time
+	34. Connection blocks don't take a block label, and can be nested within either a resource or a provisioner.
+		provisioner"file"{source="conf/myapp.conf"destination="/etc/myapp.conf"connection{type="ssh"user="root"password="${var.root_password}"host="${var.host}"}}
+	35. Map = {}
+	36. Terraform has detailed logs which can be enabled by setting the TF_LOG environment variable to any value. This will cause detailed logs to appear on stderr.
+	37. All plan , apply  and destroy commands run refresh first, 
+	38. Not all providers and resources support Terraform import.
+	39. terraform state mv command can also move resources to an entirely new state.
+	40.  Explicitly declare this dependency and forcing Terraform to create S3 bucket before EC2 instance = depends_on
+	41. If you delete remote backend configuration from Terraform code and run terraform apply , it will detect backend change and throw an error. You need to reinitialize Terraform again, and it will prompt you to migrate existing remote state to the local backend so that it can still manage resources managed by the remote state.
+	42. Removing a Resource from State
+	Items removed from the Terraform state are not physically destroyed. Items removed from the Terraform state are only no longer managed by Terraform. For example, if you remove an AWS instance from the state, the AWS instance will continue running, but terraform plan will no longer see that instance.
+	43. US EC2 west will throw error cause no (am) image 
+		1. provider "aws" {
+		2.   region = "us-east-1"
+		3. }
+		4.  
+		5. provider "aws" {
+		6.   alias  = "west"
+		7.   region = "us-west-2"
+		8. }
+		9.  
+		10. # 1st VM in us-east-1 region
+		11. resource "aws_instance" "quiz_experts_east" {
+		12.   ami           = "some_ami_id_from_us-east-1"
+		13.   instance_type = "t3.micro"
+		14.  
+		15.   tags = {
+		16.     Name = "Quiz Experts"
+		17.   }
+		18. }
+		19.  
+		20. # 2nd VM in us-west-2 region
+		21. resource "aws_instance" "quiz_experts_west" {
+		22.   ami           = "some_ami_id_from_us-west-2"
+		23.   instance_type = "t3.micro"
+		24.  
+		25.   tags = {
+		26.     Name = "Quiz Experts"
+		27.   }
+		28. }
+		• Terraform will work as expected and create one VM in "us-east-1" and one in "us-west-2".
+		
+	44. If creation-time provisioner fails, Terraform marks the resource as TAINTED. A tainted resource will be planned for destruction and recreation upon the next terraform apply
+	45. List = list(any)!!!
+	46. Tuple =([]) to initalize
+	47. List in Terraform!! [1,2,3]; value = element(var.array,4) = 1 ->If the given index is greater than the length of the list then the index is "wrapped around" by taking the index modulo
+	48. Cost Estimation is a paid service
+	49. When running a terraform plan, Terraform must know the current state of resources in order to effectively determine the changes that it needs to make to reach your desired configuration. (BUT it is not the real world)
+	50. Enterprise acc exclusive: audit logging and SAML single sign-on.
+	51. Additional provider configurations are never inherited automatically by child modules.
+	52. A module cannot access all the variables of the parent module.
+	53. The Terraform language will automatically convert string values to bool values when needed,
+	54. For Terraform < 0.12  ,Third-party providers must be manually installed, since terraform init cannot automatically download them.
+	55. Terraform cloud has history of all the stuff
+	56. Need TF_log mandatory b4 TF_Log_Path
+	57. terraform taint module.salt_master_cluster.module.instance.salt_master !!!
+	58. Terraform loads variables in the following order, with later sources taking precedence over earlier ones:
+	       *  Environment variables
+	       *  The terraform.tfvars file, if present.
+	       *  The terraform.tfvars.json file, if present.
+	       *  Any *.auto.tfvars or *.auto.tfvars.json files, processed in lexical order of their filenames.
+	       *  Any -var and -var-file options on the command line, in the order they are provided.
+	59. Each module must declare its own provider requirement
+	60. Terraform workspaces are technically equivalent to renaming your state file.
+	61. The current implementation of Terraform import can only import resources into the state. It does not generate a configuration.
+	62. When using a remote state, the state is only ever held in memory when used by Terraform.
+	63. Plan a destroy terraform plan -destroy/ terraform destry (need confirm to further destroy ar on9)
+	   
+	
+	64. Answer = it will omit the redundant variables and it works with name and age shown in the end.
+				
+				1. # Terraform Configuration 
+				2.  
+				3. variable "user_details" {
+				4.   type = object({ name = string, age = number })
+				5. }
+				6.  
+				7. output "user_details_output" {
+				8.   value = var.user_details
+				9. }
+				
+				
+				10. # Content of terraform.tfvars file
+				11.  
+				12. user_details = {
+				13.   name = "Peter Griffin"
+				14.   age  = 46
+				15.   city = "Quahog"
+				16.   show = "Family Guy"
+				17. }
+	65. Terraform and Terraform Plugins are written in the Go programming language.
+	66. Output can be marked as containing sensitive material using the optional sensitive argument.
+	67. The idempotent characteristic provided by IaC tools ensures that, even if the same code is applied multiple times, the result remains the same.!!!
+	68. User =0 and 1
+			
+			a. resource "aws_iam_user" "quiz_experts_user" {
+			b.   count = 2
+			c.   name  = "user_${count.index}"
+			d. }
+	69. Terraform forces every state modification command to write a backup file.
+	70. Help: ex: terraform plan -h
+	✅ -help
+	✅ --help
+	71. TF_Log and Stderr!!
+	72. Localpath must be ./ or ../ for module
+	73. Storing state remotely is better than locally!
+	74. Can terraform import resources into modules
+	75. terraform plan -out=text.txt
+	76. The Terraform provisioner block works only within the resource configuration block YES
+	77. Data source is during plan

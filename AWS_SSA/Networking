@@ -1,0 +1,41 @@
+Route53
+	- Weighted, latency (The only option for improving latency/performance !!!), health check, failover (active-passive), geolocation (related to REGION, can block country !!!!!), geoproximity(lat, longitude)
+	
+	- Cname (cannot make one for the root aka zone apex) vs Alias (Alias for routing traffic to selected AWS res, No third party website (netlify) (covid19survey.com is routed to www.covid19survey.com = only Alias)
+	- Aname => name to address (182.rj3iowjr)
+	- Route53 points to Cloudfront/ALB = ALIAS
+	- Can map to Cloudfront , Elastic Beanstack env, ….
+	- o set up complex routing on Route53, use traffic flow to set the order.
+	- Default no TTL
+	- MX Record is used for specifying mail servers
+Cloudfront
+	- Can block geolocation!!!!!!
+	- Use HTTP Cache-control  to control cache time 
+	- Support backup origin
+	-  persistent connection to origin - and network overhead is minimized
+	- USE ALIAS to direct!
+	- Caching only work for static (if images that are unique, cannot)
+	- Field Level Encryption
+	- Have price class All, 200, 100 . Cheapest =100 (EU+US)
+	- Lambda@Edge is a feature of Amazon CloudFront 
+		○ Help with compressed format of image
+	- Based on content type
+	- Can help EC2 too
+	- Netflix (Allow access to a path and cache it)
+		○ Signed Cookies - multiple files
+		○ Signed URL - one individual file
+	- +S3 = use origin access identity OAI ( no need to login)
+	- Origin groups for failover/HA
+	- ELB + Cloudfront 
+		○ ELB that is configured to allow only the internal service IP ranges associated with CloudFront. As these are updated from time to time, you can use AWS Lambda to automatically update the addresses.
+Global Accelerator
+	- Traverse the global network (Cloudfront use but not traverse) (routing traffic to endpoints)
+	- Static IP address!!!!!!!!
+	- For non http and not cache - MQTT, UDP
+	- Good for blue green testing!!!
+	- For failover!!
+	- Handle a lot of Load balancer - Global Accelerator automatically re-routes your traffic to your nearest healthy available endpoint
+
+Cloudfront vs Accelerator = Cloudfront cannot expose static IP address!!
+Hostname
+DNS hostnames and DNS resolution are required settings for private hosted zones
