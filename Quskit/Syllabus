@@ -1,0 +1,58 @@
+Perform Operations on Q Circuits47%
+	1. Construct multi-qubit quantum registers
+	2. Measure quantum circuits in classical registers
+	3. Use single-qubit gates
+	4. Use multi-qubit gates
+	5. Use barrier operations
+	6. Return the circuit depth
+	7. Extend quantum circuits
+	8. Return the OpenQASM string for a circuit
+
+ Executing Experiments
+3%
+	1. Execute a quantum circuit
+
+• Section 3: Implement BasicAer: Python-based Simulators
+3%
+	1. Use the available simulators
+
+ Implement Qasm
+1%
+	1. Read a QASM file and string
+
+Compare and Contrast Quantum Information
+10%
+	1. Use classical and quantum registers
+	2. Use operators
+	3. Measure fidelity
+
+• Section 6: Return the Experiment Results
+7%
+	1. Return and understand the histogram data of an experiment
+	2. Return and understand the statevector of an experiment
+	3. Return and understand the unitary of an experiment
+Use Qiskit Tools
+1%
+	1. Monitor the status of a job instance
+
+
+• Section 8: Display and Use System Information
+3%
+	1. Perform operations around the Qiskit version
+	2.  Use information gained from %quiskit_backend_overview
+
+• Section 9: Construct Visualizations
+19%
+	1. Draw a circuit
+	2. Plot a histogram of data
+	3. Plot a Bloch multivector
+	4. Plot a Bloch vector
+	5. Plot a QSphere
+	6. Plot a density matrix
+	7. Plot a gate map with error rates
+
+• Section 10: Access Aer Provider
+6%
+	1. Access a statevector_simulator backend
+	2. Access a qasm_simulator backend
+Access a unitary_simulator backend
