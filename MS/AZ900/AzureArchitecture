@@ -82,6 +82,7 @@ concepts
   * Authorization
     Grant access
     
+Access    
 Azure Active Directory
 - Identity + access management
 -A user with a username and password or applications or other servers with secret keys or certificates.
@@ -96,29 +97,13 @@ MFA
 - locaiton
 =2 or more of the above
   
-  
+
 Role-based access control
 Role definition – list of permissions like create VM, delete SQL, assign permissions, etc. V
 Security Principal – user, group, service principal and managed identity S
 Scope – resource, resource groups, subscription, management group O (Management Groups > Subscriptions > Resource Groups > Resources)
 
 Security Principal -> Role definition -> Scope
-
-
-Locks 
-Read-only (ReadOnly) – only read actions are allowed
-Delete (CanNotDelete) – all actions except delete are allowed
-
-Policy
-Designed to help with resource governance, security, compliance, cost management, etc.
-Policies focus on resource properties (RBAC focused on user actions)
-
-Blueprint
-=policy template already defined
-
-
-Cloud Adoption Framework
-Plan->Ready->Adopt->Govern and Manage
 
 Microsoft Defender for Cloud
 DEFAULT - Free (Azure Defender OFF) – included in all Azure services, provides continuous assessments, security score, and actionable security recommendations
