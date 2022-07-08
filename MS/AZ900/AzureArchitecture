@@ -1,0 +1,17 @@
+Describe the core architectural components of Azure
+  1. AZ
+      * Zone
+        Zonal services (VM)
+        Zone redundant (SQL)
+      * Region
+        Supported Region has 3 more AZ
+      * Region Pair (DR)
+        Customer cannot choose
+        Each region is paired
+      * Geographies (two or more)
+         In the same geography
+  2. Resource
+
+Describe Azure compute and networking services
+Describe Azure storage services
+Describe Azure identity, access, and security
