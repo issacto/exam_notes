@@ -74,3 +74,20 @@ Other
   
 Describe Azure identity, access, and security
 
+concepts
+  * Identity
+    User
+  * Authentication
+    Verify
+  * Authorization
+    Grant access
+    
+Azure Active Directory
+- Azure ID
+- User 
+- Group
+
+MFA
+  
+  
+  
