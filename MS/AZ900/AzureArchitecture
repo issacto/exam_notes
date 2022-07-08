@@ -117,6 +117,9 @@ Blueprint
 =policy template already defined
 
 
+Cloud Adoption Framework
+Plan->Ready->Adopt->Govern and Manage
+
 Microsoft Defender for Cloud
 DEFAULT - Free (Azure Defender OFF) – included in all Azure services, provides continuous assessments, security score, and actionable security recommendations
 Paid (Azure Defender ON) – hybrid security, threat protection alerts, vulnerability scanning, just in time (JIT) VM access, etc.  
