@@ -105,6 +105,11 @@ Scope – resource, resource groups, subscription, management group O (Managemen
 Security Principal -> Role definition -> Scope
 
 
+Locks 
+Read-only (ReadOnly) – only read actions are allowed
+Delete (CanNotDelete) – all actions except delete are allowed
+
+
 Microsoft Defender for Cloud
 DEFAULT - Free (Azure Defender OFF) – included in all Azure services, provides continuous assessments, security score, and actionable security recommendations
 Paid (Azure Defender ON) – hybrid security, threat protection alerts, vulnerability scanning, just in time (JIT) VM access, etc.  
