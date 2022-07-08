@@ -8,6 +8,22 @@ Total cost of Ownership = if you use on prem
 
 Describe features and tools in Azure for governance and compliance
 
+Locks 
+Read-only (ReadOnly) – only read actions are allowed
+Delete (CanNotDelete) – all actions except delete are allowed
+
+Policy
+Designed to help with resource governance, security, compliance, cost management, etc.
+Policies focus on resource properties (RBAC focused on user actions)
+
+Blueprint
+=policy template already defined
+
+
+Cloud Adoption Framework
+Plan->Ready->Adopt->Govern and Manage
+
+
 Describe features and tools for managing and deploying Azure resources
 
 Describe monitoring tools in Azure
