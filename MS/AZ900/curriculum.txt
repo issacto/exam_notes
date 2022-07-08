@@ -1,3 +1,12 @@
+
+Passing score =700
+85 minutes
+30-50q
+Practice Test - https://docs.microsoft.com/en-us/learn/certifications/resources/az-900-sample-questions
+Question bank - https://www.itexams.com/exam/AZ-900
+Oreally - 1
+Pluralsight -2
+
 Describe cloud concepts (15-20%)
 Describe core Azure services (30-35%)
 Describe Security, Privacy, Compliance, and Trust (25-30%)
