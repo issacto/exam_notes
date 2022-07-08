@@ -41,4 +41,29 @@ Describe Azure compute and networking services
       * CDN
           Minimize latency
 Describe Azure storage services
+
+Storage
+  * blob storage (container)
+    object (HOT, COOL (low availability), Archive)
+  * queue storage
+  * table storage 
+    semi structured; NOSQL
+    fast
+  * file storage
+    Shared drive
+    Onprem file sharing
+    =blob but use SMB
+  * disk storage
+  
+Database
+* Cosmos
+  Globally distributed NoSQL 
+* SQL
+
+Other
+* Azure Marketplace (Self and Third party)
+* Azure IOT
+  Hub (PAAS)
+  Central with templates (SAAS)
+  Sphere OS
 Describe Azure identity, access, and security
