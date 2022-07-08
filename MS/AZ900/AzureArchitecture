@@ -94,10 +94,17 @@ MFA
 - physical (fingerprint)
 - possession (phone)
 - locaiton
+=2 or more of the above
   
   
 Role-based access control
+Role definition – list of permissions like create VM, delete SQL, assign permissions, etc. V
+Security Principal – user, group, service principal and managed identity S
+Scope – resource, resource groups, subscription, management group O
 
+Security Principal -> Role definition -> Scope
+Management Groups > Subscriptions > Resource Groups > Resources
 
 Microsoft Defender for Cloud
-  
+DEFAULT - Free (Azure Defender OFF) – included in all Azure services, provides continuous assessments, security score, and actionable security recommendations
+Paid (Azure Defender ON) – hybrid security, threat protection alerts, vulnerability scanning, just in time (JIT) VM access, etc.  
