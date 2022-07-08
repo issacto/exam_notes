@@ -8,10 +8,29 @@ Describe the core architectural components of Azure
       * Region Pair (DR)
         Customer cannot choose
         Each region is paired
-      * Geographies (two or more)
+      * Geographies (two or more regions)
          In the same geography
   2. Resource
+       * Resource
+          save as json 
+          MUST be in one and only one group
+       * Resource group
+          logically grouped (Cant be nested, can in diff region)
+       * Resource Manager
+          access
 
 Describe Azure compute and networking services
+  1. Compute
+      * VM (only IAAS here, all other are PAA)
+      * Container Instance (autoscaling)
+      * Kubernetes
+      * App Service
+      * Function
+  2. Networking
+      * Virtual Network
+      * Load Balancer
+      * VPN Gateway
+      * Application Gateway
+      * CDN
 Describe Azure storage services
 Describe Azure identity, access, and security
