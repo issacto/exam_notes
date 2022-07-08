@@ -28,9 +28,17 @@ Describe Azure compute and networking services
       * Function
   2. Networking
       * Virtual Network
+        Region based
+        Logically connected
+        VNet peering allow cross region communication
       * Load Balancer
+        tcp/udp
       * VPN Gateway
+         connect on-premises to azure traffic over the public internet
       * Application Gateway
+          Web traffic load balancer (HTTP)
+          URL routing
       * CDN
+          Minimize latency
 Describe Azure storage services
 Describe Azure identity, access, and security
