@@ -1,10 +1,9 @@
 Describe cost management in Azure
 
-Azure Cost Management monitoring - A centralized service for reporting usage and billing of Azure environment
-  budgets, alarms, cost recommendation
+Azure Cost Management monitoring - A centralized service for reporting usage and billing of Azure environment; budgets, alarms, cost recommendation
 Azure Pricing Calculator = check cloud price
 Total cost of Ownership = if you use on prem
-
+Tag = group the department
 
 Describe features and tools in Azure for governance and compliance
 
