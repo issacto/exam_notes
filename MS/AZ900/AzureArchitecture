@@ -1,5 +1,6 @@
 Describe the core architectural components of Azure
   1. AZ
+      * not all azure regions support availability zones
       * Zone
         Zonal services (VM)
         Zone redundant (SQL)
