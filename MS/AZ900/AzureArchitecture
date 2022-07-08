@@ -83,11 +83,21 @@ concepts
     Grant access
     
 Azure Active Directory
+- Identity + access management
+-A user with a username and password or applications or other servers with secret keys or certificates.
 - Azure ID
 - User 
 - Group
 
 MFA
+- knowledge
+- physical (fingerprint)
+- possession (phone)
+- locaiton
   
   
+Role-based access control
+
+
+Microsoft Defender for Cloud
   
