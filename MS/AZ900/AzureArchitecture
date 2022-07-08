@@ -109,6 +109,13 @@ Locks
 Read-only (ReadOnly) – only read actions are allowed
 Delete (CanNotDelete) – all actions except delete are allowed
 
+Policy
+Designed to help with resource governance, security, compliance, cost management, etc.
+Policies focus on resource properties (RBAC focused on user actions)
+
+Blueprint
+=policy template already defined
+
 
 Microsoft Defender for Cloud
 DEFAULT - Free (Azure Defender OFF) – included in all Azure services, provides continuous assessments, security score, and actionable security recommendations
