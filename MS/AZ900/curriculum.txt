@@ -4,6 +4,7 @@ Passing score =700
 30-50q
 Practice Test - https://docs.microsoft.com/en-us/learn/certifications/resources/az-900-sample-questions
 Question bank - https://www.itexams.com/exam/AZ-900
+Learn - https://marczak.io/az-900/#ep30
 Oreally - 1
 Pluralsight -2
 
