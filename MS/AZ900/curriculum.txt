@@ -1,0 +1,4 @@
+Describe cloud concepts (15-20%)
+Describe core Azure services (30-35%)
+Describe Security, Privacy, Compliance, and Trust (25-30%)
+Describe Azure cost management and Service Level Agreements (10-15%)
