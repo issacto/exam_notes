@@ -1,0 +1,9 @@
+Describe cloud computing
+  * CapEx, Opex
+  * Consumption based model
+  * Shared responsibility model
+Describe the benefits of using cloud services
+  * Public 
+  * Private
+  * Hybrid (most flexible)
+Describe cloud service types
