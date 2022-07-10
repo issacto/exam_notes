@@ -25,4 +25,17 @@ Plan->Ready->Adopt->Govern and Manage
 
 Describe features and tools for managing and deploying Azure resources
 
+Cloud Shell (orale that one), CLI (based on python), Poweshell (for powershell)
+Azure ARC (hybrid cloud)
+Azure Resource Manager
+
 Describe monitoring tools in Azure
+
+Azure Advisor
+Cost (SKU sizes, idle services, reserved instances, etc.)
+Security (MFA settings, vulnerability settings, agent installations, etc.)
+Reliability (redundancy settings, soft delete on blobs, etc.)
+Performance (SKU sizes, SDK versions, IO throttling, etc.)
+Operational Excellence (service health, subscription limits, etc.)
+
+
