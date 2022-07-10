@@ -1,0 +1,7 @@
+Tags for Resources are not inherited by default from their Resource Group
+To read or download a blob in archive, you must first rehydrate it to an online tier.
+Subscription = first step to do
+ 99.99 percent You need a minimum of two virtual machines with each one located in a different availability zone (2).
+ Outbound data transfer is charged at the normal rate and inbound data transfer is free.
+ virtual machines are an IaaS 
+
