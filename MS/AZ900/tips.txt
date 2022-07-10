@@ -4,6 +4,6 @@ Subscription = first step to do
  99.99 percent You need a minimum of two virtual machines with each one located in a different availability zone (2).
  Outbound data transfer is charged at the normal rate and inbound data transfer is free.
  virtual machines are an IaaS 
-Most = PAAS (Database!!)
+Most = PAAS (Database, Azure Backup!!)
 hybrid cloud = cheapest
 Public cloud has no capex
