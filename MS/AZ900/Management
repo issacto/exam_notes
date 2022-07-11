@@ -40,9 +40,20 @@ Azure log -> log analysis
 
 
 If sla is violated, Applies Credit
+
 Security (MFA settings, vulnerability settings, agent installations, etc.)
 Reliability (redundancy settings, soft delete on blobs, etc.)
 Performance (SKU sizes, SDK versions, IO throttling, etc.)
 Operational Excellence (service health, subscription limits, etc.)
+
+
+Depth
+1 Data	 encryption at rest in Azure Blob Storage	
+2	Application	SSL/TLS encrypted sessions	
+3	Compute	Regular application of OS and layered software patches	
+4	Network	Network security rules	
+5	Perimeter	DDoS protection	
+6	Identity and access	Azure Active Directory user authentication	
+7	Physical security	Azure datacenter biometric access controls	
 
 
