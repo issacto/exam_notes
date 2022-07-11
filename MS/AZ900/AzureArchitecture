@@ -48,6 +48,7 @@ Describe Azure compute and networking services
 Describe Azure storage services
 
 Storage
+  * storage has at least three copies (may not be diff datacenter)
   * blob storage (container)
     object (HOT, COOL (low availability), Archive)
   * queue storage
