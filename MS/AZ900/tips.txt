@@ -11,3 +11,4 @@ SSO = Authentication
 Avilability = MTTR and mtbf
 Recovery = RTO and RPO
 Many Azure resource have quote limits. = new support request
+RG only belongs to one Sub
