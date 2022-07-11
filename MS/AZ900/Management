@@ -34,7 +34,9 @@ Describe monitoring tools in Azure
 Azure Advisor
 Cost (SKU sizes, idle services, reserved instances, etc.)
 
-Azure Application insights, Service Health, Azure log
+Azure Application insights -> Application anomalities in web app 
+Service Health -> Disaster recovery
+Azure log -> log analysis
 
 
 If sla is violated, Applies Credit
