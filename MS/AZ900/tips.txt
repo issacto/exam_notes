@@ -12,3 +12,4 @@ Avilability = MTTR and mtbf
 Recovery = RTO and RPO
 Many Azure resource have quote limits. = new support request
 RG only belongs to one Sub
+Azure containers are the backbone of the virtual disks platform for Azure IaaS.
