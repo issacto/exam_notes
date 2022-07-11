@@ -33,6 +33,11 @@ Describe monitoring tools in Azure
 
 Azure Advisor
 Cost (SKU sizes, idle services, reserved instances, etc.)
+
+Azure Application insights, Service Health, Azure log
+
+
+If sla is violated, Applies Credit
 Security (MFA settings, vulnerability settings, agent installations, etc.)
 Reliability (redundancy settings, soft delete on blobs, etc.)
 Performance (SKU sizes, SDK versions, IO throttling, etc.)
