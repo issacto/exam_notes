@@ -7,3 +7,6 @@ Subscription = first step to do
 Most = PAAS (Database, Azure Backup!!)
 hybrid cloud = cheapest
 Public cloud has no capex
+SSO = Authentication 
+Avilability = MTTR and mtbf
+Recovery = RTO and RPO
