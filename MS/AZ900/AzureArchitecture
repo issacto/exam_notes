@@ -11,6 +11,7 @@ Describe the core architectural components of Azure
         Each region is paired
       * Geographies (two or more regions)
          In the same geography
+        * Soveriegn = China/ German/ US (stricter policies)
   2. Resource
        * Resource
           save as json 
@@ -23,6 +24,8 @@ Describe the core architectural components of Azure
 Describe Azure compute and networking services
   1. Compute
       * VM (only IAAS here, all other are PAA)
+        99.9% if 2 machines in two different env
+        Stop (delocate) is cheaper
       * Container Instance (autoscaling)
       * Kubernetes
       * App Service
@@ -39,6 +42,7 @@ Describe Azure compute and networking services
       * Application Gateway
           Web traffic load balancer (HTTP)
           URL routing
+      * Express Route, Site to site, Point to site
       * CDN
           Minimize latency
 Describe Azure storage services
@@ -55,6 +59,7 @@ Storage
     Onprem file sharing
     =blob but use SMB
   * disk storage
+  Locally/ Geo/zone redundant
   
 Database
 * Cosmos
@@ -66,7 +71,7 @@ Other
 * Azure IOT
   Hub (PAAS)
   Central with templates (SAAS)
-  Sphere OS
+  Sphere OS!!!!
 * Big data
   Synapse Analytics - Synapase SQL
   Azure HDInsight (multipurpose) - all apache
@@ -98,6 +103,9 @@ MFA
 - locaiton
 =2 or more of the above
   
+Key Vault
+Azure Information Protection
+
 
 Role-based access control
 Role definition – list of permissions like create VM, delete SQL, assign permissions, etc. V
@@ -109,3 +117,7 @@ Security Principal -> Role definition -> Scope
 Microsoft Defender for Cloud
 DEFAULT - Free (Azure Defender OFF) – included in all Azure services, provides continuous assessments, security score, and actionable security recommendations
 Paid (Azure Defender ON) – hybrid security, threat protection alerts, vulnerability scanning, just in time (JIT) VM access, etc.  
+
+
+Azure Machine Learning vs Hub
+
