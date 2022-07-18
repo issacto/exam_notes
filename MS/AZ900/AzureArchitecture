@@ -107,6 +107,8 @@ MFA
 =2 or more of the above
   
 Key Vault
+Safeguard cryptographic keys and other secrets used by cloud apps and services
+
 Azure Information Protection
 automatically add watermarks to Microsoft Word documents that contain credit card information.
 
