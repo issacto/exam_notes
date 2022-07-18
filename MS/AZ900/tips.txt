@@ -14,4 +14,4 @@ Many Azure resource have quote limits. = new support request
 RG only belongs to one Sub
 Azure containers are the backbone of the virtual disks platform for Azure IaaS.
 A subscription can have multiple administrators, but there can only be one account administrator.
-
+Support = azure portal/support ticket api
