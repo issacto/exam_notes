@@ -25,7 +25,7 @@ Plan->Ready->Adopt->Govern and Manage
 
 Describe features and tools for managing and deploying Azure resources
 
-Cloud Shell (orale that one), CLI (based on python), Poweshell (for powershell)
+Cloud Shell (online browser, orale that one), CLI (based on python), Poweshell (for powershell)
 Azure ARC (hybrid cloud)
 Azure Resource Manager
 
