@@ -23,3 +23,4 @@ Syncronization Service manager= sso sync
 SLA = SLA*SLA
 Azure monitor = monitor application problems while Azure Acitivty log = dev/users such as who made a new machine
 T/F There is a charge for data transfer between different Azure regions
+In order to allow access to application, config network security group and azure firewll
