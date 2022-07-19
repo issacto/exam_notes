@@ -16,3 +16,5 @@ Azure containers are the backbone of the virtual disks platform for Azure IaaS.
 A subscription can have multiple administrators, but there can only be one account administrator.
 Support = azure portal/support ticket api
 Local network gateway for connecting azure with onprem hybrid
+Help and support = find advice
+Trust Center = be aware of the latest azure security standards
