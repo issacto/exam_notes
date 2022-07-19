@@ -12,7 +12,7 @@ Describe the core architectural components of Azure
         Each region is paired
       * Geographies (two or more regions)
          In the same geography
-        * Soveriegn = China/ German/ US (stricter policies)
+        * Soveriegn = China/ German/ US (stricter policies); Japan/ other nope; so they use normal one - global
   2. Resource
        * Resource
           save as json 
