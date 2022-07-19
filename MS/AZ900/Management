@@ -34,6 +34,7 @@ Describe monitoring tools in Azure
 Azure Advisor
 Cost (SKU sizes, idle services, reserved instances, etc.)
 Guidance and reommendations for improving azure environment
+Security, reliatbility, performance, cost, operational excellence
 
 Azure Application insights -> Application anomalities in web app 
 Service Health -> Disaster recovery
