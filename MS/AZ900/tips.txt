@@ -21,3 +21,4 @@ Trust Center = be aware of the latest azure security standards
 If want dun create = azure policy; dun delete = delete lock; dun update = readonly lock
 Syncronization Service manager= sso sync
 SLA = SLA*SLA
+Azure monitor = monitor application problems while Azure Acitivty log = dev/users such as who made a new machine
