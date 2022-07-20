@@ -33,7 +33,7 @@ Describe Azure compute and networking services
       * Function
   2. Networking
       * Virtual Network
-        Region based
+        Region based!!
         Logically connected
         VNet peering allow cross region communication
       * Load Balancer
