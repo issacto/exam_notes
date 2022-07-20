@@ -52,7 +52,7 @@ Describe Azure storage services
 Storage
   * storage has at least three copies (may not be diff datacenter)
   * blob storage (container)
-    object (HOT, COOL (low availability), Archive)
+    object (Premium, HOT, COOL (low availability), Archive)
   * queue storage
   * table storage 
     semi structured; NOSQL
