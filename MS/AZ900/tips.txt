@@ -32,4 +32,4 @@ Network subnet security best = network security group
 Azure Subscription Owner => cannot override azure policy
 Azure ARC = combine windows and linux
 VM scale set =  at most 1000 (load balancing + autoscale)
-Service Trust Portal = compliance
+Service Trust Portal = compliance documents
