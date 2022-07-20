@@ -43,6 +43,7 @@ Describe Azure compute and networking services
           Site to site (vpn - vpn), Point to site (computer to cloud vpn)
       * Application Gateway
           Web traffic load balancer (HTTP)
+          with Web application firewall
           URL routing
       * Express Route ( private) - fastest one
       * CDN
