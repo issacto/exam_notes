@@ -12,6 +12,7 @@ Describe the core architectural components of Azure
         Each region is paired
       * Geographies (two or more regions)
          In the same geography
+         * GEO redundant = 3 (in the same region) * 2 ( in diff regions) = 6
         * Soveriegn = China/ German/ US (stricter policies); Japan/ other nope; so they use normal one - global
   2. Resource
        * Resource
