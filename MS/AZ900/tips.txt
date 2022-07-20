@@ -35,3 +35,6 @@ VM scale set =  at most 1000 (load balancing + autoscale)
 Service Trust Portal = compliance documents
 Budget of a subscription = alert + start automation
 Storage account  charges data leaving azure
+Storage and Subscription in an account = unlimited
+TCO includes real estate but not developer cost!!!
+AD can do smart lockout
