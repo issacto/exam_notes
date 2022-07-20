@@ -118,7 +118,7 @@ Can protect  and encrypt documents and emails but not encrypt network sql and st
 Role-based access control
 Role definition – list of permissions like create VM, delete SQL, assign permissions, etc. V
 Security Principal – user, group, service principal and managed identity S
-Scope – resource, resource groups, subscription, management group O (Management Groups > Subscriptions > Resource Groups > Resources)
+Scope – resource, resource groups, subscription, management group O (Management Groups (Management group mangages multi sub) > Subscriptions > Resource Groups > Resources)
 
 Security Principal -> Role definition -> Scope
 
