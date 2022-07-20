@@ -26,3 +26,8 @@ T - There is a charge for data transfer between different Azure regions
 In order to allow access to application, config network security group and azure firewll
 Can manage multiple subscriptions using a single account ( 50 is the limit)
 You need a valid account on ea portal ea.azure.com to have enterprise sub
+Resrved instances cheapest!
+Azure Data box = hard drive to cpy file
+Network subnet security best = network security group
+Azure Subscription Owner => cannot override azure policy
+Azure ARC = combine windows and linux
