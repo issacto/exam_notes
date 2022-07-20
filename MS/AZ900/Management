@@ -38,7 +38,7 @@ Security, reliatbility, performance, cost, operational excellence
 
 Azure Application insights -> Application anomalities in web app 
 Service Health -> Disaster recovery
-Azure log -> log analysis
+Azure monitor/log -> log analysis
 
 
 If sla is violated, Applies Credit
