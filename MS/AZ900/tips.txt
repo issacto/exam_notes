@@ -65,3 +65,5 @@ Number of webjob and application framework does not affect app service cost
 region cannot span country in azure
 
 Azure monitor can autoscale 
+
+Contributor = do all things with resource but cannot control other users
