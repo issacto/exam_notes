@@ -63,3 +63,5 @@ VHD migration = to blob instead of file
 TCO = determine server, database, storage and network requirement
 Number of webjob and application framework does not affect app service cost
 region cannot span country in azure
+
+Azure monitor can autoscale 
