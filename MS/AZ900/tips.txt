@@ -41,3 +41,4 @@ AD can do smart lockout; AD domaind service = domain join service
 Azure cloud shell allow access to bash and powershell console in portal
 VM use bastion instead of public accessible vm
 Zero trust = verify explicitly, least priviledge, assume breach
+Copyaz is a command-line utility that you can use to copy blobs or files to or from a storage account.
