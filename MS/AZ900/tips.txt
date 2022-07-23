@@ -49,3 +49,5 @@ Cap ex is fixed
 Microsoft Defender = security defense for VM
 ARM can set limit for resource to be provisioned
 az login = cli; az connect = powershell
+
+Azure monitor starts when a resource is added to a subscription
