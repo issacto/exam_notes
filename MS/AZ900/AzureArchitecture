@@ -46,7 +46,7 @@ Describe Azure compute and networking services
           Web traffic load balancer (HTTP)
           with Web application firewall
           URL routing
-      * Express Route ( private) - fastest one
+      * Express Route ( private) - fastest one - FOR ONPREM only ; not vpn x vpn
       * CDN
           Minimize latency
 Describe Azure storage services
