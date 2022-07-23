@@ -74,3 +74,4 @@ Dedicated host = only one subscription and paid by the host
 Storage account is required to use cloud shell
 
 Linux is cheaper than Windows
+Cloud Shell times out after 20 mins; azure power shell on ios and andoroid
