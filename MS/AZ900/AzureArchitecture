@@ -37,6 +37,7 @@ Describe Azure compute and networking services
         Region based!!
         Logically connected
         VNet peering allow cross region communication
+          not public network; microsoft's one
       * Load Balancer
         tcp/udp
       * VPN Gateway
