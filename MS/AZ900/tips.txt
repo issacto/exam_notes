@@ -70,3 +70,4 @@ Contributor = do all things with resource but cannot control other users
 A user can have a lot of subscription
 Quota for resource group is based on region
 DDOS basic is enabled by default (not standard)
+Dedicated host = only one subscription and paid by the host
