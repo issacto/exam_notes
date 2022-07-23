@@ -59,3 +59,4 @@ burstable = if on prem needs more resource
 Cool storage deleted with 30days incur penalties
 MFA = Password, Voice Call, SMS (no Email address)
 Strategy -> Plan -> Prepare -> Innovate
+VHD migration = to blob instead of file 
