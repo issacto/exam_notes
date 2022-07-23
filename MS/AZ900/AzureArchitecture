@@ -101,6 +101,7 @@ Azure Active Directory
 - Azure ID
 - User 
 - Group
+- AD Connect = connect on prem and cloud ad
 
 MFA
 - knowledge
