@@ -54,3 +54,6 @@ Azure monitor starts when a resource is added to a subscription
 
 
 IAAS = need to manage os system
+burstable = if on prem needs more resource
+
+Cool storage deleted with 30days incur penalties
