@@ -46,7 +46,7 @@ Azure Service Health = azure infra health
 
 
 Cap ex is fixed
-Microsoft Defender = security defense for VM
+Microsoft Defender = security defense for VM; Number of passing and failing assessments, overall compliance score
 ARM can set limit for resource to be provisioned
 az login = cli; az connect = powershell
 
@@ -58,3 +58,4 @@ burstable = if on prem needs more resource
 
 Cool storage deleted with 30days incur penalties
 MFA = Password, Voice Call, SMS (no Email address)
+Strategy -> Plan -> Prepare -> Innovate
