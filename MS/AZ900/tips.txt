@@ -72,3 +72,5 @@ Quota for resource group is based on region
 DDOS basic is enabled by default (not standard)
 Dedicated host = only one subscription and paid by the host
 Storage account is required to use cloud shell
+
+Linux is cheaper than Windows
