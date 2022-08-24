@@ -1,0 +1,15 @@
+1.1 Command line Basics 
+  touch game{1..5} 
+  rm game?.js
+  echo
+  export
+1.2 Command line Help
+  locate
+  info
+  man
+1.3 Dir and List files
+  tree
+  find
+1.4 Create, move and delete files
+  cp
+  mv
