@@ -1,0 +1,69 @@
+4.1 Choice
+  Enterprice Grade Linux = Redhat, CentOS (Free), UBUNTU LTS
+  Customer grade = Fedora, UBUNTU non lts (hobbyist)
+  Experimental = Gentoo, Arch
+  
+4.2 Hardware
+lscpu
+lscblk
+free -m check available memory
+
+
+4.3 Data
+
+1. Binary files
+
+/* Essentials */
+/sbin essential binaries for system administration such as parted or ip.
+/bin essential binaries for all users such as ls, mv, or mkdir.
+/* Exucutable */
+/usr/sbin  binaries for system administration such as deluser, or groupadd.
+/usr/bin most executable files — such as free, pstree, sudo or man — that can be used by all users.
+/* local */
+/usr/local/sbin  locally installed programs for system administration that are not managed by the system’s package manager.
+/usr/local/bin /usr/local/sbin but for regular user programs.
+
+
+2. ETC
+
+group System group database.
+hostname Name of the host computer.
+hosts List of IP addresses and their hostname translations.
+passwd System user database — made up of seven fields separated by colons providing information about the user.
+profile System-wide configuration file for Bash.
+shadow Encrypted file for user passwords.
+RC = 
+
+
+
+3. HOME
+
+.bash_history stores the command line history.
+.bash_logout includes commands to execute when leaving the login shell.
+.bashrc initialization script for non-login shells.
+.profile initialization script for login shells.
+
+4. Boot (kernel)
+vmlinuz-4.15.0-50-generic
+
+4 Kernel version
+15 Major revision
+0 Minor revision
+50 Patch number
+
+
+5. Proc ( dynamically populated)
+/proc/cpuinfo cpu info 
+/proc/cmdline strings passed to the kernel
+/proc/meminfo
+
+6. Dev (devices)
+
+/dev/zero
+/dev/null
+/dev/urandom
+
+7. Sys
+
+
+4.3 Networking
