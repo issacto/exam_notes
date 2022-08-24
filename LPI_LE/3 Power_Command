@@ -1,0 +1,9 @@
+2.1 Archive
+  tar vs zip (compression)
+2.2 Searc and Extract Data
+  grep
+  sort
+  advanced grep
+2.3 Turn command into Script
+  ./xxxx.sh (make sure to chmod +x <filename>)
+
