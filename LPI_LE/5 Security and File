@@ -1,0 +1,51 @@
+5.1 Basic Security and Identifying User Types
+
+who = who is logined now; last = history
+/etc/passwd - basic information about the users on the system, including UID and GID, home directory, shell, etc. Despite the name, no passwords are stored here.
+/etc/group - stores basic information about all user groups on the system, like group name and GID and members.
+/etc/shadow - where user passwords are stored. They are hashed, for security.
+/etc/gshadow - stores more detailed information about groups, including a hashed password which lets users temporarily become a member of the group, a list of users who can become a member of the group at and time and a list of group administrators.
+
+
+
+/etc/passwd 
+
+USERNAME:PASSWORD:UID:GID:GECOS:HOMEDIR:SHELL
+
+USERNAME The username aka login (name), like root, nobody, emma.
+PASSWORD Legacy location of the password hash. Almost always x, indicating that the password is stored in the file /etc/shadow.
+UID User ID (UID), like 0, 99, 1024.
+GID Default Group ID (GID), like 0, 99, 1024.
+GECOS A CSV list of user information including name, location, phone number. For example: Emma Smith,42 Douglas St,555.555.5555
+HOMEDIR Path to the user’s home directory, like /root, /home/emma, etc.
+SHELL The default shell for this user, like /bin/bash, /sbin/nologin, /bin/ksh, etc.
+
+/etc/group
+
+NAME group name, like root, users, emma, etc.
+PASSWORD legacy location of an optional group password hash. Almost always x, indicating that the password (if defined) is stored in the file /etc/gshadow.
+GID Group ID (GID), like 0, 99, 1024.
+MEMBERS a comma-separated list of usernames which are members of the group, like jsmith,emma.
+
+
+/etc/shadow
+
+
+USERNAME:PASSWORD:LASTCHANGE:MINAGE:MAXAGE:WARN:INACTIVE:EXPDATE
+
+USERNAME The username (same as /etc/passwd), like root, nobody, emma.
+PASSWORD A one-way hash of the password, including preceding salt. For example: !!, !$1$01234567$ABC…​, $6$012345789ABCDEF$012…​.
+LASTCHANGE Date of the last password change in days since the “epoch”, such as 17909.
+MINAGE Minimum password age in days.
+MAXAGE Maximum password age in days.
+WARN Warning period before password expiration, in days.
+INACTIVE Maximum password age past expiration, in days.
+EXPDATE Date of password expiration, in days since the “epoch”.
+
+Password:
+!! a “disabled” account (no authentication possible), with no password hash stored.
+!$1$01234567$ABC… “disabled” account (due to the initial exclamation mark), with a prior hash function, hash salt and hash string stored.
+$1$0123456789ABC$012…  “enabled” account, with a hash function, hash salt and hash string stored.
+
+
+/etc/shadow
