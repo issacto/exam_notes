@@ -69,3 +69,4 @@ vmlinuz-4.15.0-50-generic
 4.3 Networking
 
 ip link show
+ifconfig -a. = get address
