@@ -48,4 +48,70 @@ Password:
 $1$0123456789ABC$012…  “enabled” account, with a hash function, hash salt and hash string stored.
 
 
-/etc/shadow
+
+/etc/gshadow
+
+= file readable only by root and by users with root privileges that contains encrypted passwords for groups, each on a separate line:
+developer:$6$7QUIhUX1WdO6$H7kOYgsboLkDseFHpk04lwAtweSUQHipoxIgo83QNDxYtYwgmZTCU0qSCuCkErmyR263rvHiLctZVDR7Ya9Ai1::
+
+Group name = The name of the group.
+Encrypted password = The encrypted password for the group (it is used when a user, who is not a member of the group, wants to join the group using the newgrp command — if the password starts with !, no one is allowed to access the group with newgrp).
+Group administrators = A comma-delimited list of the administrators of the group (they can change the password of the group and can add or remove group members with the gpasswd command).
+Group members = A comma-delimited list of the members of the group.
+
+
+
+
+5.2 Create User and Group
+
+useradd frank
+passwd frank (set password)
+userdel -r frank
+
+groupadd -g 1090 developer
+groupdel developer
+
+
+5.3 File permission
+
+drwxrwxr-x
+
+First char = type
+- (normal file)
+d (directory)
+l (soft link)
+b (block device)
+c (character device)
+s (socket)
+
+
+r  value of 4 (don’t worry, we will discuss octals shortly). This means permission to open a file and read its contents.
+w  octal value of 2. This means permission to edit or delete a file.
+x  octal value of 1. This means that the file can be run as an executable or script.
+
+Sticky Bit
+Set GID
+Set UID
+
+
+
+
+
+
+5.4 Special Directories and Files 
+
+A. Temp Files
+
+/tmp  files written here will be preserved between invocations of a program. The recommendation is that this directory be cleared (all files erased) during system boot-up, although this is not mandatory.
+/var/tmp  should not be cleared during the system boot-up, i.e. files stored here will usually persist between reboots.
+/run  run-time variable data used by running processes, such as process identifier files (.pid). Programs that need more than one run-time file may create subdirectories here. This location must be cleared during system boot-up. The purpose of this directory was once served by /var/run, and on some systems /var/run may be a symbolic link to /run.
+
+B. Hard Link
+
+ln target.txt /home/carol/Documents/hardlink
+
+C. Soft Link
+
+ln -s target.txt /home/carol/Documents/softlink
+
+Soft is not copy; its a pointer; hard is a copy
