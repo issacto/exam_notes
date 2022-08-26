@@ -89,7 +89,24 @@ r  value of 4 (don’t worry, we will discuss octals shortly). This means permis
 w  octal value of 2. This means permission to edit or delete a file.
 x  octal value of 1. This means that the file can be run as an executable or script.
 
+
+640 (rw- r-- ---)
+
+groups (ls groups basically)
+
 Sticky Bit
+- cannot delete files unless it is owner
+- Directories with the sticky bit set show a t replacing the x on the permissions
+- drwxr-xr-t
+
+chmod Change the permissions of a file or directory.
+
+chmod 6755 test.sh
+chmod 1755 Another_Directory
+chown Change the owning user and/or group of a file or directory.
+chown username:groupname filename
+chown carol:students text.txt (carol does not need to be a member of the students group.)
+
 Set GID
 Set UID
 
