@@ -50,3 +50,19 @@ bash test.sh
  find /home -name "foo.txt"
 
 
+
+ Inkscape = graphical editor for vector graphics
+ 
+ RPI OS =  On a removable SD card which is put into the Raspberry Pi.
+ 
+ 
+ # = privilege 
+ 
+ 
+ Info
+ =man/info dou ok
+ 
+ 
+ Recursive LS 
+ = ls -R
+
