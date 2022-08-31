@@ -26,3 +26,27 @@ Root ID =0
 
 
 Each file is owned by exactly one user and one group.
+
+tmp directory =  rwxrwxrwt (t = sticky; only deletable by owner) 
+
+tar options for compression
+‘--gzip’	‘-z’	gzip
+‘--bzip2’	‘-j’	bzip2
+‘--xz’	‘-J’	xz
+‘--compress’	‘-Z’	compress
+
+tar -cf work.tar ./work/ (archive)
+
+
+Two ways to run .sh
+
+bash test.sh
+./test.sh
+
+
+ export-logs | sort
+ 
+ 
+ find /home -name "foo.txt"
+
+
