@@ -23,3 +23,6 @@ Root ID =0
 
 
 654 of a file  - rw- r-x r--
+
+
+Each file is owned by exactly one user and one group.
