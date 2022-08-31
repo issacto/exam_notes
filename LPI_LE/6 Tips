@@ -1,0 +1,25 @@
+Reverse DNS assigns hostnames to IP addresses. How is the name of the IP address 198.51.100.165 stored on a DNS server?
+In the PTR record for 165.100.51.198.in-addr.arpa.
+
+Hard vs Solid Disks
+Hard disks have a motor and moving parts, solid state disks do not.
+Solid state disks provide faster access to stored data than hard disks.
+
+The SATA bus can connect hard disk drives with the motherboard
+
+Command 'host'  resolve a DNS name to an IP address
+
+DMESG
+It displays the content of the Linux kernel's ring buffer.
+It might not display older information because it was overwritten by newer information.
+Hide Solution
+
+
+last format:
+root tty2 Wed May 17 21:11 - 21:11 (00:00)
+
+Root ID =0
+
+
+
+654 of a file  - rw- r-x r--
