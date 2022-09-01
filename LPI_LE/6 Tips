@@ -69,3 +69,6 @@ bash test.sh
  
  RMDIR = only for empty directory
 
+cp *.txt /tmp/
+
+| = split a command to multiple lines
