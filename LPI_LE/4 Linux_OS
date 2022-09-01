@@ -22,7 +22,7 @@ free -m check available memory
 /* local */
 /usr/local/sbin  locally installed programs for system administration that are not managed by the system’s package manager.
 /usr/local/bin /usr/local/sbin but for regular user programs.
-
+/usr/share/doc/ = contains information, documentation and example configuration files for installed software packages
 
 2. ETC
 
