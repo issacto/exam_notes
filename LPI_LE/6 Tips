@@ -77,3 +77,7 @@ cp *.txt /tmp/
 
 ?= only once compared to * 
 export MYVAR=value correct
+
+Passwords are only stored in hashed form.
+
+
