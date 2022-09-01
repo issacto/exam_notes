@@ -37,6 +37,8 @@ tar options for compression
 
 tar -cf work.tar ./work/ (archive)
 
+ tar -xzf file1.tar.gz
+
 
 Two ways to run .sh
 
