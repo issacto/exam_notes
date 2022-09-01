@@ -65,4 +65,7 @@ bash test.sh
  
  Recursive LS 
  = ls -R
+ 
+ 
+ RMDIR = only for empty directory
 
