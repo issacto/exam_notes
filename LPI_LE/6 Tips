@@ -72,3 +72,6 @@ bash test.sh
 cp *.txt /tmp/
 
 | = split a command to multiple lines
+
+?= only once compared to * 
+export MYVAR=value correct
