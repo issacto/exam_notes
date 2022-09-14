@@ -1,5 +1,10 @@
 5.1 Basic Security and Identifying User Types
 
+
+System user
+-> may have pw
+-> no interactive login shell, no home dir, lower uid
+
 who = who is logined now; last = history
 /etc/passwd - basic information about the users on the system, including UID and GID, home directory, shell, etc. Despite the name, no passwords are stored here.
 /etc/group - stores basic information about all user groups on the system, like group name and GID and members.
@@ -66,11 +71,18 @@ Group members = A comma-delimited list of the members of the group.
 
 useradd frank
 passwd frank (set password)
+passwd -l stosh (lock his password)
 userdel -r frank
+usermod -a -G linuxacademy stosh  = add user stosh to linuxacademy
 
 groupadd -g 1090 developer
 groupdel developer
 
+how to find thre group of a user
+
+groups stosh
+id stosh 
+cat /etc/group | grep stosh
 
 5.3 File permission
 
