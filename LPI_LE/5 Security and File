@@ -86,6 +86,7 @@ cat /etc/group | grep stosh
 
 5.3 File permission
 
+
 drwxrwxr-x
 
 First char = type
@@ -118,6 +119,9 @@ chmod 1755 Another_Directory
 chown Change the owning user and/or group of a file or directory.
 chown username:groupname filename
 chown carol:students text.txt (carol does not need to be a member of the students group.)
+
+
+chown -R
 
 Set GID
 Set UID
