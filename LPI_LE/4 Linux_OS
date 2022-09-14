@@ -2,11 +2,20 @@
   Enterprice Grade Linux = Redhat, CentOS (Free), UBUNTU LTS
   Customer grade = Fedora, UBUNTU non lts (hobbyist)
   Experimental = Gentoo, Arch
+  pre windows 10 cannot ssh
   
 4.2 Hardware
 lscpu
 lscblk
-free -m check available memory
+free -m check available memory  displays non-persistent storage usage.
+
+
+dmidecode
+dmidecode provides a description of the system's hardware components through the DMI table.
+
+lshw
+The lshw utility shows detailed information about the computer's hardware configuration.
+
 
 
 4.3 Data
@@ -25,6 +34,8 @@ free -m check available memory
 /usr/share/doc/ = contains information, documentation and example configuration files for installed software packages
 
 2. ETC
+
+Store sercice configuration file usually
 
 group System group database.
 hostname Name of the host computer.
@@ -57,6 +68,21 @@ vmlinuz-4.15.0-50-generic
 /proc/cmdline strings passed to the kernel
 /proc/meminfo
 
+
+Every process has 
+
+A folder in /proc named for the PID
+Every running process on the system has a folder in /proc named for the PID (placed there by the kernel).
+
+A PID
+Every running process on the system has a PID.
+
+ps aux -> all the process
+ps -> process of current user
+
+
+
+
 6. Dev (devices)
 
 /dev/zero
@@ -69,4 +95,10 @@ vmlinuz-4.15.0-50-generic
 4.3 Networking
 
 ip link show
+ip route show
 ifconfig -a. = get address
+
+ss=netstat = view listening services and ports
+
+
+
