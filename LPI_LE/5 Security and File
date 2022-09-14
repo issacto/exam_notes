@@ -147,4 +147,8 @@ C. Soft Link
 
 ln -s target.txt /home/carol/Documents/softlink
 
+ln -s a b
+
+a = source, b = dir
+
 Soft is not copy; its a pointer; hard is a copy
