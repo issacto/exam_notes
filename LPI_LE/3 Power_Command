@@ -17,7 +17,9 @@
   ./xxxx.sh (make sure to chmod +x <filename>)
   
   condition
-  if [ -n $i ]; then echo $i; fi
+  if [ -n $i ] 
+  then echo $i
+  fi
   for i in {1..10}; do echo $i; done
   
   An exit status of 0 indicates success.
