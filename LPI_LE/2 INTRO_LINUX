@@ -3,6 +3,11 @@
   rm game?.js
   echo
   export
+  ls
+    -l -> long
+    -h -> human readble
+    -a -> all files
+    -A -> without . and .. files
 1.2 Command line Help
   locate
   info
