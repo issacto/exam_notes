@@ -3,7 +3,12 @@
   tar cvf ibmarchive files.... (create)
   tar tf ./archive.tar (look at the file inside tar)
   tar xf ibmarchive (extract)
+  
+  tar -cvzf example.tar.gz 
+  
   tar xzf archive.tgz ( unpack gzip compressed archive)
+  
+  
   
   zip ibm.zip ibm
   unzip ibm.zip
