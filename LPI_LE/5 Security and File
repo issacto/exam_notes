@@ -159,6 +159,7 @@ ln -s a b
 a = source, b = dir
 
 Soft is not copy; its a pointer; hard is a copy
+Persists and links to the target's old location
 
 
 CRON JOB
