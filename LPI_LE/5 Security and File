@@ -154,3 +154,13 @@ ln -s a b
 a = source, b = dir
 
 Soft is not copy; its a pointer; hard is a copy
+
+
+CRON JOB
+
+To run a cron job at every quarter hour (i.e every 15th minute), add this:
+*/15 * * * * <command-to-execute>
+
+To run a cron job every hour at minute 30:
+30 * * * * <command-to-execute>
+
