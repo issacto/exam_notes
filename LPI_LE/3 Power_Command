@@ -40,5 +40,6 @@
   myvar = 'apple' no dollar sign before
   echo $myvar
 
-
+#!
+This is the "shebang". This tells the system what follows is the absolute path to the interpreter.
 
