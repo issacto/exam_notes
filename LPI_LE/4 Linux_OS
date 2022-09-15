@@ -37,7 +37,7 @@ The lshw utility shows detailed information about the computer's hardware config
 
 Store sercice configuration file usually
 
-group System group database.
+group System group database. (not groups)
 hostname Name of the host computer.
 hosts List of IP addresses and their hostname translations.
 passwd System user database — made up of seven fields separated by colons providing information about the user.
