@@ -1,7 +1,8 @@
 2.1 Archive
   tar vs zip (compression)
-  tar cvf ibmarchive files....
+  tar cvf ibmarchive files.... (create)
   tar tf ./archive.tar (look at the file inside tar)
+  tar xf ibmarchive (extract)
   tar xzf archive.tgz ( unpack gzip compressed archive)
   
 2.2 Searc and Extract Data
