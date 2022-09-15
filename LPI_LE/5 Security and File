@@ -89,6 +89,8 @@ cat /etc/group | grep stosh
 
 drwxrwxr-x
 
+owner, group, other
+
 First char = type
 - (normal file)
 d (directory)
