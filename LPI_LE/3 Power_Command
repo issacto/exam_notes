@@ -24,7 +24,7 @@
   
   An exit status of 0 indicates success.
   myvar = 'apple' no dollar sign before
-  
+  echo $myvar
 
 
 
