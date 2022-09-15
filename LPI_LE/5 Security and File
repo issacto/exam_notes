@@ -135,6 +135,10 @@ Set UID
 
 5.4 Special Directories and Files 
 
+
+$ is used to designate standard user privileges.
+
+
 A. Temp Files
 
 /tmp  files written here will be preserved between invocations of a program. The recommendation is that this directory be cleared (all files erased) during system boot-up, although this is not mandatory.
