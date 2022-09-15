@@ -70,6 +70,7 @@ Group members = A comma-delimited list of the members of the group.
 5.2 Create User and Group
 
 useradd frank
+useradd -m stosh will create the user stosh and the home directory at the same time with defaults.
 passwd frank (set password)
 passwd -l stosh (lock his password)
 userdel -r frank
