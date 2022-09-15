@@ -3,6 +3,7 @@
   tar cvf ibmarchive files.... (create)
   tar tf ./archive.tar (look at the file inside tar)
   tar xf ibmarchive (extract)
+  tar -xf ./archive.tar file.txt (extract specific file)
   
   tar -cvzf example.tar.gz 
   
