@@ -23,6 +23,9 @@
   tail/ head -n1/2/3/4/5
   wc = word count 
   wc = -l -w -c = line, word, btye
+  
+  history = command history
+  
 2.3 Turn command into Script
   ./xxxx.sh (make sure to chmod +x <filename>)
   
