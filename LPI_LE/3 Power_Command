@@ -1,5 +1,6 @@
 2.1 Archive
   tar vs zip (compression)
+  tar cvf ibmarchive files....
   tar tf ./archive.tar (look at the file inside tar)
   tar xzf archive.tgz ( unpack gzip compressed archive)
   
