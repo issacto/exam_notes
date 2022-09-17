@@ -165,8 +165,8 @@ Persists and links to the target's old location
 CRON JOB
 
 To run a cron job at every quarter hour (i.e every 15th minute), add this:
-*/15 * * * * <command-to-execute>
+*/15 * * * * <command-to-execute> (check it with a timer)
 
 To run a cron job every hour at minute 30:
-30 * * * * <command-to-execute>
+30 * * * * <command-to-execute> ( set a time on clock)
 
