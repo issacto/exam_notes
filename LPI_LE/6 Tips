@@ -2,6 +2,9 @@ echo is used to write to the standard output (not just the screen; think piping 
 
 The PATH environment variable is used to define which directories the interpreter looks in for executables.
 
+FLOSS
+Free/Libre and Open Source Software
+
 
 echo "This \"is\" 'some' \ntext"
 echo -e "This \"is\" 'some' \ntext"
