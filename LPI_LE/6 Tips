@@ -1,3 +1,5 @@
+$ as the normal prompt and # as root
+
 echo is used to write to the standard output (not just the screen; think piping and redirection).
 
 The PATH environment variable is used to define which directories the interpreter looks in for executables.
