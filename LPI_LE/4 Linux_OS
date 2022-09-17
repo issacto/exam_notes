@@ -79,7 +79,7 @@ Every running process on the system has a PID.
 
 ps aux -> all the process
 ps -> process of current user
-
+ps -u $(whoami)
 
 
 
