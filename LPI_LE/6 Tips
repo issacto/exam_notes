@@ -4,6 +4,7 @@ The PATH environment variable is used to define which directories the interprete
 
 
 echo "This \"is\" 'some' \ntext"
+echo -e "This \"is\" 'some' \ntext"
 or \\\n
 
 node --help
