@@ -26,6 +26,8 @@
    7. S3 ->
        1. S3 = Data Lake (to load data = COPY)
        2. S3 ORC, Parquet saves a lot of money for query!!
+   8. CSV usually first column = label, text/csv;label_size=0
+      
 EG 
 Transform the data from JSON format to Apache Parquet format using an AWS Glue job. Configure AWS Glue crawlers to discover the schema and build the AWS Glue Data Catalog. Leverage Amazon Athena to create a table with a subset of columns. Set up Amazon QuickSight for visual analysis of the data and identify fraudulent transactions using QuickSight's built-in machine learning-powered anomaly detection
 
@@ -56,8 +58,10 @@ number_of_shards = max (incoming_write_bandwidth_in_KB/1000, outgoing_read_bandw
    eg
    Drop a feature if variance is small, lots of missing value and low correlation to target
    Replicate only a subset of data -> Set the S3DataDistributionType field to ShardedByS3Key
+   Shuffle the training data and create a 5GB slice of this shuffled data. Build your model on the Jupyter Notebook using this slice of training data. Once the evaluation metric looks good, create a training job on SageMaker infrastructure with the appropriate instance types and instance counts to handle the entire training data
 
-5. Neural Network
+
+6. Neural Network
 
    1. Feedforward, Convolutional (Image Classification), RNN (LSTM)
    2. Learning -> learning rate, batch size (batch size smaller, more accurate, find global, longer time) LEARNING RATE/Batch size does not affect the OVERFITTING THING, more like the optimal solution
@@ -73,8 +77,15 @@ number_of_shards = max (incoming_write_bandwidth_in_KB/1000, outgoing_read_bandw
        3. Use more training data, Use less features in the model
    5. Train, Validation (hyper tuning parameters), Testing
    6. A residual for an observation in the evaluation data is the difference between the true target and the predicted target.
+   7. Bagging and Boosting
+      - Bagging = ensemble, avoids overfitting
+      - Boosting = add weight to wrong ones , yields better accuracy
 
-6. Performance Evaluation
+   eg
+   When training a deep learning model, if you increase the batch size, you should also Increase the learning rate
+
+
+8. Performance Evaluation
    1. Recall - True Positive / (TP + FN) (when false negatives is important) (sensitivity) (ALL real positives)
    2. Precision - True Positive / (TP + FP) (ALL tested positive) (Prioritise precision if you are more aware of real negatives not being marked as positive)
    3. True Negative Rate = TN/TN+FP (ALL Real Negative)
@@ -87,4 +98,8 @@ number_of_shards = max (incoming_write_bandwidth_in_KB/1000, outgoing_read_bandw
    10. Hypertuning 
       - Choose logarithmic scaling when you are searching a range that spans several orders of magnitude
       - AWS offers hyperband automation!
+  
+   eg
+   Decreasing the class probability threshold makes the model more sensitive and, therefore, marks more cases as the positive class, which is fraud in this case.
+   
 
