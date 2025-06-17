@@ -12,6 +12,7 @@
         1. Please call the number below. 
         2. Please do not call us.
         Dimension = 2,16
+   4. NLP (sentence analysis) - Tokenise, lowercase and remove stop words
 
 2. Data processing
    1. GLUE -
@@ -26,6 +27,7 @@
    7. S3 ->
        1. S3 = Data Lake (to load data = COPY)
        2. S3 ORC, Parquet saves a lot of money for query!!
+       3. Using Pipe mode streams data directly from S3 to the algorithm, reducing the need to use and store data on EBS volumes, hence lowering costs associated with EBS. This mode is ideal for large datasets.
    8. CSV usually first column = label, text/csv;label_size=0
       
 EG 
@@ -102,4 +104,75 @@ number_of_shards = max (incoming_write_bandwidth_in_KB/1000, outgoing_read_bandw
    eg
    Decreasing the class probability threshold makes the model more sensitive and, therefore, marks more cases as the positive class, which is fraud in this case.
    
+9. Sagemaker Algorithms
+  1. Linear learner
+   2. XGboost (tree) (you can customize your own training scripts)
+       1. XGboost = CSV must not have a column header record!!!.  Target variable must be the first column
+       2. Hyperparameters
+           1. Subsample - smaller,  less overfitting
+           2. ETA - reduce step size, prevent overfitting
+           3. Gamma - minimum loss reduction to create a partition , larger = less overfitting
+           4. Alpha - L1 Regularisation, larger less overfitting
+           5. Lambda -L2 , larger less overfitting
+           6. Eval_metr-> if care about false positive then use AUC
+           7. Scale_pos_weight (adjust balance of positive and negative , helpful for unbalanced class)
+           8. Max_depth ( too high will overfit)
+   3. Seq2Seq (translation/speech2Text/summarisation)
+   4. DeepAR (time series) RNN
+   5. BlazingText (text classification/ word2vec) - > Skip-gram model focuses on generating embeddings for individual words rather than entire tweets, classification Just a gsingle word!!, find classification. Word2vec only single WORD!!!! `__label__4 linux ready for prime time, intel says.`
+   6. Object2Vec (word2vec but for things) find similarity
+   7. Object Detection
+   8. Image Classification
+   9. Semantic Segmentation (medical/self driving) pixel-level  classification
+   10. Random Cut Forest -> Unsupervised deep learning, Anomaly detection / outliner removal, unsupervised, fraud detection
+   11. Neural Topic Model (Classify or summarize documents) (unsupervised)
+   12. LDA ( Latent Dirichlet Allocation, topic) things other than words  (unsupervised)  LDA is a "bag-of-words" model, which means that the order of words does not matter Observations are referred to as documents. The feature set is referred to as vocabulary. A feature is referred to as a word. And the resulting categories are referred to as topics 
+   13. KNN (Nearest-Neighbors) classification 
+   14. KMeans (clustering) - Apply the "elbow method" by analyzing a plot of the total within-cluster sum of squares (WSS) against the number of clusters (k).
+       1. Must Hyperparameter -> feature_dim,k 
+   15. PCA (unsupervised dimensional reduction)
+   16. Factorisation Machines (recommendation sparse) (float32)
+   17. IP Insights unsupervised(abnormal/annonymous IP address)
+   18.  sagemaker-spark library
+   19.  With IAM identity-based policies, you can specify allowed or denied actions and resources as well as the conditions under which actions are allowed or denied for Amazon SageMaker
+   20. Amazon SageMaker supports authorization based on resource tags
 
+10. High level Amazon Service
+   1. Amazon Comprehend -> NLP / Entities / Sentiment / Topic Comprehension ; Can take non English content! No need translation
+   2. Amazon Translate
+   3. Amazon Transcribe (Speech to Text)
+   4. Amazon Polly (Text to Speech, Speak) (Synthesis Markup Language SSML to give control to pronunciation / whispering)
+   5. Rekognition (Computer Vision) -> detect celebrities, Amazon Rekognition Video
+   6. Forecast (“AutoML” chooses best model for your )
+   7. Lex (Alexa) -> can also take speech
+   8. Personalise  (recommendation)
+
+11. Sagemaker Pre and Post Deployment
+     1. Training
+         1. SageMaker Notebook, Console, API
+            Jupyter notebook
+               Save as /home/ec2-user/SageMaker then notebook won’t lose any files when instance restarts
+               Specify the output path on an Amazon S3 bucket where the trained model will persist
+     2. Inference
+            1. Neo + AWS IoT Greengrass = compiler + runtime = Edge computing
+            2. SageMaker Batch Transform - no need real time and batch a lot
+            3. Distributed GPU training = Horovod, Accelerated Computing / AI – GPU instances -> g3, g4, p2, p3
+            4. Autopilot -> HPO / Ensembling (10 modells) . Auto => >100MB, HPO and smaller = Ensembling
+            5. Inference Pipelines can be used to make either real-time predictions or to process batch transforms
+                - 2-15 containers
+                - Use pre-built TensorFlow docker images provided by SageMaker to train and host models on SageMaker infrastructure
+                 Connection
+                       Connect to the SageMaker API or to the SageMaker Runtime through an interface endpoint in your Virtual Private Cloud (VPC)
+                        Use AWS Key Management Service (AWS KMS) to manage encryption keys for encrypting data at rest and use TLS for encrypting data in transit.
+                        Enable network isolation for training jobs and models
+            6. Elastic Inference = At fraction of cost of using a GPU instance  
+   
+   3. Monitoring
+       1. Cloudwatch = system, cloudTrail = api, user activity
+            SageMaker monitoring metrics are available on CloudWatch at a 1-minute frequency
+         CloudWatch keeps the SageMaker monitoring statistics for 15 months. However, the Amazon CloudWatch console limits the search to metrics that were updated in the last 2 weeks
+      2.  CloudTrail
+               log user activities
+               provides a record of actions taken by a user, role, or an AWS service in Amazon SageMaker. CloudTrail keeps this record for a period of 90 days
+
+       
