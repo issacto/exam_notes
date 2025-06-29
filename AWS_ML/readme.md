@@ -252,7 +252,7 @@ Transform data from JSON to Apache Parquet format using an AWS Glue job. Configu
 * **Seq2Seq**: Used for sequence-to-sequence tasks like machine translation, speech-to-text, and summarization.
 * **DeepAR**: An RNN-based algorithm for time series forecasting.
 * **BlazingText**: For text classification and **Word2Vec**.
-    * **Word2Vec**: Generates embeddings for individual words, not entire documents. Can be used for classification of single words. Example format: `__label__4 linux ready for prime time, intel says.`
+    * **Word2Vec**: Generates embeddings for individual words, not entire documents. Can be used for classification of single words. Example format: `__label__4 linux ready for prime time , intel says.` Need space for special character
 * **Object2Vec**: Similar to Word2Vec but for arbitrary objects, used to find similarities.
 * **Object Detection**: Identifies and localizes objects within images or videos.
 * **Image Classification**: Categorizes images into predefined classes.
