@@ -39,8 +39,13 @@
 ### B. Amazon EMR
 
 * **Node Configuration**: Typically 1 Master node, 1 Core node, and many Task nodes (often using Spot Instances).
-* **Amazon EMR File System (EMRFS)**: Establishes a connection between MapReduce and S3, employing the `s3://` file prefix for data access.
+* **Amazon EMR File System (EMRFS)**: Establishes a connection between MapReduce and S3, employing the `s3://` file prefix for data access. = transfer different files
 * **Use Case**: Useful for converting very large data (e.g., 1TB).
+
+### B1. Amazon Batch
+* ** Serverless docker
+* Step function better than batch when orchestrating a sequence of dependent tasks
+
 
 ### C. AWS Data Pipeline
 
@@ -61,6 +66,10 @@
 
 * **Common Format**: Usually, the first column is the label.
 * **Format Specification**: `text/csv;label_size=0`
+* Other format:
+*    RecordIO format is Image
+*    Parquet columnar text data,
+
 
 ### G. Example Data Transformation Flow
 
@@ -72,7 +81,7 @@ Transform data from JSON to Apache Parquet format using an AWS Glue job. Configu
 
 * **Number of Shards Calculation**: `number_of_shards = max(incoming_write_bandwidth_in_KB / 1000, outgoing_read_bandwidth_in_KB / 2000)`
 * **Kinesis Streams**: Low-latency streaming ingest at scale.
-* **Kinesis Analytics**: Perform real-time analytics on streams using SQL.
+* **Kinesis Analytics**: Perform real-time analytics on streams using SQL. -> running detection
 * **Kinesis Firehose**: Load streams into S3, Redshift, Elasticsearch & Splunk.
 * **Kinesis Video Streams**: Meant for streaming video in real-time.
 
@@ -85,7 +94,7 @@ Transform data from JSON to Apache Parquet format using an AWS Glue job. Configu
 * **PCA (Principal Component Analysis)**:
     * **Regular PCA**: Transforms regular data into sparse data.
     * **Randomized PCA**: Suitable for a large number of observations and features.
-* **K-Means**: Used for clustering, which can sometimes aid in dimensionality reduction by grouping similar data points.
+* **K-Means**: Used for clustering, which can sometimes aid in dimensionality reduction by grouping similar data points. Elbow Method is a popular technique for determining k in k-Means clustering
 
 ### B. Imputing Missing Data
 
@@ -168,7 +177,7 @@ Transform data from JSON to Apache Parquet format using an AWS Glue job. Configu
 
 * **Softmax**: Used for multiple classification problems.
 * **Tanh (Hyperbolic Tangent)**: Often used in RNNs.
-* **ReLU (Rectified Linear Unit)**, **Leaky ReLU**, **PReLU**, **Maxout**, **Swish**: Commonly used in various neural network architectures for their non-linear properties.
+* **ReLU (Rectified Linear Unit)**, **Leaky ReLU**, **PReLU**, **Maxout**, **Swish**: Commonly used in various neural network architectures for their non-linear properties. -> useful for many layers
 
 ### D. Overfitting
 
@@ -180,6 +189,8 @@ Transform data from JSON to Apache Parquet format using an AWS Glue job. Configu
     * **Early Stopping**: Halting training when validation performance starts to drop.
     * **More Training Data**: Increasing the amount of data available for training.
     * **Less Features in the Model**: Reducing the complexity of the model by using fewer input features.
+    * **Use more features in the training data,Use more layers in the network -> Make overfitting worse
+
 
 ### E. Model Splitting
 
@@ -316,14 +327,20 @@ Transform data from JSON to Apache Parquet format using an AWS Glue job. Configu
 * **Edge Computing**: **AWS SageMaker Neo** (compiler) + **AWS IoT Greengrass** (runtime) enables model deployment to edge devices.
 * **Batch Inference**: **SageMaker Batch Transform** is used for non-real-time, large-scale batch predictions.
 * **Distributed GPU Training**: Uses frameworks like **Horovod** on **Accelerated Computing / AI GPU instances** (e.g., g3, g4, p2, p3).
-* **SageMaker Autopilot**: Automates model building, including **Hyperparameter Optimization (HPO)** and **Ensembling** (combining up to 10 models). Autopilot is for datasets > 100MB; HPO is for smaller datasets, leading to ensembling.
+* **SageMaker Autopilot**: Automates model building, including **Hyperparameter Optimization (HPO)** and **Ensembling** (combining up to 10 models).
+* datasets > 100MB = Autopilot ;< = ensembling.
 * **Inference Pipelines**: Used for real-time or batch predictions, allowing for 2-15 containers in a sequence.
     * Can use pre-built TensorFlow Docker images provided by SageMaker to train and host models.
 * **Connection and Security**:
-    * Connect to the SageMaker API or SageMaker Runtime through an interface endpoint in your Virtual Private Cloud (VPC).
+    * Virtual Private Cloud (VPC) = connecting with other services
+    * Direct Connect = connection on premise
     * Use **AWS Key Management Service (AWS KMS)** to manage encryption keys for data at rest and **TLS** for data in transit.
     * Enable **network isolation** for training jobs and models.
+    * Sagemaker to S3 Access is limited to S3 buckets with "sagemaker" in the name, unless S3FullAccess is added.
 * **Elastic Inference**: Provides GPU-powered acceleration to EC2 and SageMaker instances at a fraction of the cost of full GPU instances.
+
+Must respond to /invocations and /ping requests on port 80.
+Must accept all socket connection requests within 250 ms.
 
 ---
 
