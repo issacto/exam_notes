@@ -104,6 +104,9 @@ Transform data from JSON to Apache Parquet format using an AWS Glue job. Configu
     * **Median**: Filling missing values with the median of the column (often preferred for skewed data).
 * **KNN Imputation**: Using K-Nearest Neighbors to estimate missing values.
 * **Most Advanced Techniques**: **MICE (Multiple Imputation by Chained Equations)** or using supervised learning to estimate missing values.
+* Substitute Variables
+* **Method**: Add substitute variables for each missing feature. When a feature has a missing value for a sample, set the substitute variable to 1 for that feature, and when it has a valid value, set the variable to 0.
+
 
 ### C. Solving Bias
 
@@ -147,9 +150,6 @@ Transform data from JSON to Apache Parquet format using an AWS Glue job. Configu
 
 * **Purpose**: A method of representing categorical data (e.g., handwritten text) by transforming it into a new numerical representation where each category becomes a binary (0 or 1) feature.
 
-### L. Substitute Variables
-
-* **Method**: Add substitute variables for each missing feature. When a feature has a missing value for a sample, set the substitute variable to 1 for that feature, and when it has a valid value, set the variable to 0.
 
 ### M. Example Feature Engineering Scenarios
 
