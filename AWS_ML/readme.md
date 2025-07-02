@@ -131,6 +131,8 @@ Transform data from JSON to Apache Parquet format using an AWS Glue job. Configu
 ### G. Shuffling
 
 * **Process**: Shuffle data first, then split it into different datasets (training, validation, testing) to ensure random distribution.
+* EXAMPLE
+* Use 10,000 hours of clean speech data for training the model. Divide 100 hours of noisy data into validation and test sets. Optimize the model to improve validation performance and perform the final test using the test set
 
 ### H. AWS Ground Truth
 
@@ -275,7 +277,7 @@ Transform data from JSON to Apache Parquet format using an AWS Glue job. Configu
 
 * **Random Cut Forest**: Unsupervised deep learning algorithm for anomaly detection and outlier removal (e.g., fraud detection).
 * **Neural Topic Model (NTM)**: Unsupervised algorithm to classify or summarize documents.
-* **LDA (Latent Dirichlet Allocation)**: A "bag-of-words" model (word order doesn't matter) for topic modeling. Observations are documents, features are vocabulary, a feature is a word, and categories are topics.
+* **LDA (Latent Dirichlet Allocation)**: A "bag-of-words" model (word order doesn't matter) for topic modeling not summary!!. Observations are documents, features are vocabulary, a feature is a word, and categories are topics.
 * **K-Means**: A clustering algorithm.
     * **Elbow Method**: Apply by analyzing a plot of the total within-cluster sum of squares (WSS) against the number of clusters (`k`) to find the optimal `k`.
     * **Hyperparameters**: `feature_dim`, `k`.
@@ -348,3 +350,8 @@ Must accept all socket connection requests within 250 ms.
 
 * **Amazon CloudWatch**: For system and application-level metrics. SageMaker monitoring metrics are available at a 1-minute frequency. CloudWatch keeps statistics for 15 months, but the console limits searches to metrics updated in the last 2 weeks.
 * **AWS CloudTrail**: Logs user activities and API calls made in Amazon SageMaker. Provides a record of actions taken by a user, role, or an AWS service. Keeps records for 90 days.
+
+
+
+
+"Use Transfer Learning by removing the output layer of the image classification model, reinitialize the weights of the last hidden layer, and retrain the model."
