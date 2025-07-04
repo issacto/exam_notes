@@ -7,13 +7,20 @@ A data warehouse can only store structured data whereas a data lake can store st
 How many shards would a Kinesis Data Streams application need if the average record size is 500KB and 2 records per second are being written into this application that has 7 consumers?
 4!!!!
 Models stored as  model.tar.gz
+
 Linear Learner, and XGBoost  do not support incremental training.
+
 Kinesis Data Streams PutRecord API uses name of the stream, a partition key and the data blob
+
 Kinesis Data Firehose PutRecord API uses the name of the delivery stream and the data record
 When a model underfits, it exhibits low accuracy on both the training and test data.
+
 Use more training data helps overfitting!!!!!
+
 When a model is underfitting, then adding more features!!!!
+
 Transfer learning (use pertained model to train something else) vs Incremental Learning (Train the same model)
+
 Word2Vec is only for word. Object2vec 
 
  
