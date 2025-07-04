@@ -3,6 +3,20 @@
 ---
 
 ## 1. Prerequisites
+A data warehouse can only store structured data whereas a data lake can store structured, semi-structured and unstructured data
+How many shards would a Kinesis Data Streams application need if the average record size is 500KB and 2 records per second are being written into this application that has 7 consumers?
+4!!!!
+Models stored as  model.tar.gz
+Linear Learner, and XGBoost  do not support incremental training.
+Kinesis Data Streams PutRecord API uses name of the stream, a partition key and the data blob
+Kinesis Data Firehose PutRecord API uses the name of the delivery stream and the data record
+When a model underfits, it exhibits low accuracy on both the training and test data.
+Use more training data helps overfitting!!!!!
+When a model is underfitting, then adding more features!!!!
+Transfer learning (use pertained model to train something else) vs Incremental Learning (Train the same model)
+Word2Vec is only for word. Object2vec 
+
+ 
 
 ### A. Distribution
 
@@ -83,6 +97,10 @@ Transform data from JSON to Apache Parquet format using an AWS Glue job. Configu
 * **Kinesis Streams**: Low-latency streaming ingest at scale.
 * **Kinesis Analytics**: Perform real-time analytics on streams using SQL. -> running detection
 * **Kinesis Firehose**: Load streams into S3, Redshift, Elasticsearch & Splunk.
+
+ - Ingest the data using Kinesis Firehose that further transforms the data into Parquet format while writing to S3. Use an AWS Glue Crawler to read this data via an Athena table for ad-hoc analysis,
+ - cannot convert data in RecorIO-Protobuf
+
 * **Kinesis Video Streams**: Meant for streaming video in real-time.
 
 ---
@@ -275,7 +293,7 @@ Transform data from JSON to Apache Parquet format using an AWS Glue job. Configu
 
 ### B. Unsupervised Learning Algorithms
 
-* **Random Cut Forest**: Unsupervised deep learning algorithm for anomaly detection and outlier removal (e.g., fraud detection).
+* **Random Cut Forest**: Unsupervised deep learning algorithm for anomaly detection and outlier removal (e.g., fraud detection) ( Box plot, Histogram, Scatter plot)
 * **Neural Topic Model (NTM)**: Unsupervised algorithm to classify or summarize documents.
 * **LDA (Latent Dirichlet Allocation)**: A "bag-of-words" model (word order doesn't matter) for topic modeling not summary!!. Observations are documents, features are vocabulary, a feature is a word, and categories are topics.
 * **K-Means**: A clustering algorithm.
@@ -333,9 +351,11 @@ Transform data from JSON to Apache Parquet format using an AWS Glue job. Configu
 * datasets > 100MB = Autopilot ;< = ensembling.
 * **Inference Pipelines**: Used for real-time or batch predictions, allowing for 2-15 containers in a sequence.
     * Can use pre-built TensorFlow Docker images provided by SageMaker to train and host models.
+    * Can use spark
+    * Can use for real time or batch
 * **Connection and Security**:
     * Virtual Private Cloud (VPC) = connecting with other services
-    * Direct Connect = connection on premise
+    * Direct Connect = connection on premise,  VPC interface endpoint connects your VPC 
     * Use **AWS Key Management Service (AWS KMS)** to manage encryption keys for data at rest and **TLS** for data in transit.
     * Enable **network isolation** for training jobs and models.
     * Sagemaker to S3 Access is limited to S3 buckets with "sagemaker" in the name, unless S3FullAccess is added.
