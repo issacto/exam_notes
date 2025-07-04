@@ -169,6 +169,7 @@ Transform data from JSON to Apache Parquet format using an AWS Glue job. Configu
 
 * **Techniques**:
     * Use **logarithmic scales** on parameter ranges when searching across several orders of magnitude.
+    * Hyperband is specifically designed to minimize computational time for hyperparameter tuning
     * Decrease the number of concurrent hyperparameter tuning jobs.
 
 ### J. Quantile Binning
