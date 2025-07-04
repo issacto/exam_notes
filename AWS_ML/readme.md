@@ -23,6 +23,8 @@ Transfer learning (use pertained model to train something else) vs Incremental L
 
 Word2Vec is only for word. Object2vec 
 
+Copy the summary text fields and use them to fill in the missing full review text fields, and then run
+through the test set. 
  
 
 ### A. Distribution
